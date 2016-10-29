@@ -1,0 +1,18 @@
+include MANIFEST.in
+include requirements.txt
+include *.json
+include *.md
+include *.py
+include *.txt
+recursive-include dignity *.css
+recursive-include dignity *.csv
+recursive-include dignity *.html
+recursive-include dignity *.ico
+recursive-include dignity *.js
+recursive-include dignity *.json
+recursive-include dignity *.md
+recursive-include dignity *.png
+recursive-include dignity *.py
+recursive-include dignity *.svg
+recursive-include dignity *.txt
+recursive-exclude dignity *.pyc
