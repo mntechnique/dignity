@@ -1,4 +1,4 @@
-## Dignity Foundation
+## Foundation
 
 Forms for membership & ID generation
 
