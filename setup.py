@@ -17,7 +17,7 @@ setup(
 	version=version,
 	description='Forms for membership & ID generation',
 	author='Frappe',
-	author_email='hello@openetech.com',
+	author_email='hello@gmail.com',
 	packages=find_packages(),
 	zip_safe=False,
 	include_package_data=True,
