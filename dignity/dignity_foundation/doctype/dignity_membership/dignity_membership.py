@@ -10,5 +10,5 @@ from frappe.model.document import Document
 
 class DignityMembership(Document):
 	def validate(self):
-		if getdate(self.membership_date) > getdate(self.membership_expiry_date):
+		if getdate(self.membership_date) > getdate(self.membership_validity):
 			frappe.throw(_("Membership Date cannot be greater than membership expiry date"))
