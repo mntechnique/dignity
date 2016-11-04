@@ -15,6 +15,19 @@ class DignitySeniorCitizen(Document):
 
 
 @frappe.whitelist()
-def get_age(docname):
-	senior_citizen = frappe.get_doc("Dignity Senior Citizen",docname)
-	return	age
+def get_tahsildar(state,city,centre):
+	conditions=""
+	if state and city and centre:
+		filters = {}
+		filters["state"]= state
+		filters["city"] = city
+		filters["centre"] = centre
+		print filters
+		if state:
+			conditions += " and parent = %(state)s"
+		if city:
+			conditions += " and tahsildar_city = %(city)s"
+		if centre:
+			conditions += " and tahsildar_centre = %(centre)s"
+		tahsildar = frappe.db.sql("""select tahsildar_no,tahsildar_series from `tabDignity Tahsildar Master` where 1=1 %s""" % (conditions,),filters)
+	return tahsildar[0][0],tahsildar[0][1]
