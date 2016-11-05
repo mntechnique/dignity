@@ -79,7 +79,7 @@
  "issingle": 0, 
  "istable": 0, 
  "max_attachments": 0, 
- "modified": "2016-11-02 22:21:37.640844", 
+ "modified": "2016-11-05 08:53:26.322190", 
  "modified_by": "Administrator", 
  "module": "Dignity Foundation", 
  "name": "Dignity Tahsildar Setup", 
@@ -129,7 +129,7 @@
    "write": 1
   }
  ], 
- "quick_entry": 1, 
+ "quick_entry": 0, 
  "read_only": 0, 
  "read_only_onload": 0, 
  "sort_field": "modified", 
