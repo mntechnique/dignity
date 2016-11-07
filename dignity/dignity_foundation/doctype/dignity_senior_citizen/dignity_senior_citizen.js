@@ -23,6 +23,40 @@ frappe.ui.form.on("Dignity Senior Citizen", {
 				}
 			});
 		}
+ 	},
+	tahsildar_city: function(frm, cdt, cdn) {
+		var senior_citizen = frappe.model.get_doc(cdt, cdn);
+		if (senior_citizen.tahsildar_centre)
+		{			frappe.call({
+				method: "dignity.dignity_foundation.doctype.dignity_senior_citizen.dignity_senior_citizen.get_tahsildar",
+				args: {
+					state: frm.doc.tahsildar_state,
+					city: frm.doc.tahsildar_city,
+					centre: frm.doc.tahsildar_centre
+				},
+				callback: function(r) {
+					frappe.model.set_value(cdt, cdn, "tahsildar_no", r.message[0]);
+					frappe.model.set_value(cdt, cdn, "naming_series", r.message[1]);
+				}
+			});
+		}
+ 	},
+	tahsildar_state: function(frm, cdt, cdn) {
+		var senior_citizen = frappe.model.get_doc(cdt, cdn);
+		if (senior_citizen.tahsildar_centre)
+		{			frappe.call({
+				method: "dignity.dignity_foundation.doctype.dignity_senior_citizen.dignity_senior_citizen.get_tahsildar",
+				args: {
+					state: frm.doc.tahsildar_state,
+					city: frm.doc.tahsildar_city,
+					centre: frm.doc.tahsildar_centre
+				},
+				callback: function(r) {
+					frappe.model.set_value(cdt, cdn, "tahsildar_no", r.message[0]);
+					frappe.model.set_value(cdt, cdn, "naming_series", r.message[1]);
+				}
+			});
+		}
  	}
 });
 
