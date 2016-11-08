@@ -5,7 +5,7 @@ frappe.ui.form.on('Dignity Senior Citizen', {
 	refresh: function(frm) {
 	}
 });
-
+/*
 frappe.ui.form.on("Dignity Senior Citizen", {
 	tahsildar_centre: function(frm, cdt, cdn) {
 		var senior_citizen = frappe.model.get_doc(cdt, cdn);
@@ -18,8 +18,7 @@ frappe.ui.form.on("Dignity Senior Citizen", {
 					centre: frm.doc.tahsildar_centre
 				},
 				callback: function(r) {
-					frappe.model.set_value(cdt, cdn, "tahsildar_no", r.message[0]);
-					frappe.model.set_value(cdt, cdn, "naming_series", r.message[1]);
+					frappe.model.set_value(cdt, cdn, "naming_series", r.message[0]);
 				}
 			});
 		}
@@ -35,8 +34,7 @@ frappe.ui.form.on("Dignity Senior Citizen", {
 					centre: frm.doc.tahsildar_centre
 				},
 				callback: function(r) {
-					frappe.model.set_value(cdt, cdn, "tahsildar_no", r.message[0]);
-					frappe.model.set_value(cdt, cdn, "naming_series", r.message[1]);
+					frappe.model.set_value(cdt, cdn, "naming_series", r.message[0]);
 				}
 			});
 		}
@@ -52,14 +50,13 @@ frappe.ui.form.on("Dignity Senior Citizen", {
 					centre: frm.doc.tahsildar_centre
 				},
 				callback: function(r) {
-					frappe.model.set_value(cdt, cdn, "tahsildar_no", r.message[0]);
-					frappe.model.set_value(cdt, cdn, "naming_series", r.message[1]);
+					frappe.model.set_value(cdt, cdn, "naming_series", r.message[0]);
 				}
 			});
 		}
  	}
 });
-
+*/
 frappe.ui.form.on("Dignity Senior Citizen", {
 	date_of_birth: function(frm, cdt, cdn) {
 		var senior_citizen = frappe.model.get_doc(cdt, cdn);
