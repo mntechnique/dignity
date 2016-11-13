@@ -4,7 +4,7 @@ from frappe.utils.pdf import get_pdf
 
 @frappe.whitelist()
 def bulk_print_memberships(names):
-	if not frappe.has_permission("Dignity Membership", "write"):
+	if not frappe.has_permission("Dignity Senior Citizen", "write"):
 		frappe.throw(_("Not permitted"), frappe.PermissionError)
 
 	if len(names) == 0:
@@ -17,8 +17,11 @@ def bulk_print_memberships(names):
 	for name in names:
 
 		#dm = frappe.get_doc("Dignity Membership", name)
-		dm = { "member_name": frappe.db.get_value("Dignity Membership", name, "member_name") }
-		html += frappe.render_template("dignity/templates/includes/dignity_membership_bulk_print.html", dm)
+		sc_fn = frappe.db.get_value("Dignity Senior Citizen", name, "first_name")
+		sc_ln = frappe.db.get_value("Dignity Senior Citizen", name, "surname")
+
+		dm = { "sc_name": sc_fn + ' ' + sc_ln if sc_ln else sc_fn }
+		html += frappe.render_template("dignity/templates/includes/dignity_senior_citizen_bulk_print.html", dm)
 
 	pdf_options = { 
 					"page-height" : "4.0in",
@@ -29,9 +32,9 @@ def bulk_print_memberships(names):
 				    "margin-left": "0.75in",
 				    "encoding": "UTF-8",
 				    "no-outline": None,
-					"title": "Dignity Memberships" }
+					"title": "Senior Citizen List" }
 
-	frappe.local.response.filename = "{filename}.pdf".format(filename="memberships".replace(" ", "-").replace("/", "-"))	
+	frappe.local.response.filename = "{filename}.pdf".format(filename="senior_citizen_list".replace(" ", "-").replace("/", "-"))	
 	frappe.local.response.filecontent = get_pdf(html, pdf_options)
 	frappe.local.response.type = "download"
 	
