@@ -1,0 +1,105 @@
+<tr>
+	<td style="width: 50%">
+		<table class="scid-table">
+			<tbody>
+				<tr>
+					<td style="height: 50px"></td>
+				</tr>
+				<tr>
+					<td>
+						Senior Citizens ID card
+					</td>					
+					<td id="">
+						{{ sc.card_number or '&nbsp;' }}
+					</td>
+				</tr>
+				<tr><td>&nbsp;</td></tr>
+				<tr>
+					<td id="label_name">
+						Name/Name	
+					</td>
+					<td id="name">
+						{{sc.first_name or '&nbsp;' }}{{ sc.surname or '&nbsp;'}}
+					</td>
+				</tr>
+				<tr>
+					<td id="label_dob">
+						Date of Birth/Date of Birth
+					</td>
+					<td id="dob">
+						{%- if sc.date_of_birth -%}
+							{{frappe.utils.formatdate(sc.date_of_birth)}} - {{sc.age}} yrs
+						{%- else -%}
+							{%- if sc.year -%}
+								{{sc.year }} - {{sc.age}} yrs
+							{%- endif -%}
+						{%- endif -%}
+					</td>
+				</tr>
+				<tr>
+					<td id="label_address">
+						Address/Address
+					</td>
+					<td id="address">
+						{{sc.address_line1 or '&nbsp;'}}<br>
+						{{sc.address_line2 or '&nbsp;'}}<br>
+						{{sc.city or '&nbsp;'}}
+					</td>
+				</tr>
+				<tr>
+					<td style="height: 20px"></td>
+				</tr>
+				<tr>
+					<td id="label_telephone">
+						Tel/Tel
+					</td>
+					<td id="tel">
+						<div>{{sc.phone or '&nbsp;'}}&nbsp;{{sc.mobile or '&nbsp;'}}</div>
+					</td>
+				</tr>
+				<tr>
+					<td id="label_group">
+						Blood Group/Blood group
+					</td>
+					<td>
+						<div>{{sc.blood_group or '&nbsp;'}}</div>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</td>
+	<td  style="width: 50%">
+		<table class="scid-table">
+			<tbody>
+				<tr>
+					<td>Allergic to</td>
+					<td>{{sc.allergic_to or '&nbsp;'}}</td>
+				</tr>
+				<tr>
+					<td>Suffering/from</td>
+					<td>{{sc.disease or '&nbsp;'}}</td>
+				</tr>
+				<tr>
+					<td>Medication in use</td>
+					<td>{{sc.medication or '&nbsp;'}}</td>
+				</tr>
+				<tr>
+					<td>Emergency contact, name, address</td>
+				</tr>
+				<tr>
+					<td>{{sc.contact_name or '&nbsp;'}} <br>
+					{{sc.emergency_address1 or '&nbsp;'}}&nbsp;{{sc.emergency_address2 or '&nbsp;'}} <br>
+					{{sc.emergency_city or '&nbsp;'}}&nbsp;{{sc.emergency_state or '&nbsp;'}}</td>
+				</tr>
+				<tr>
+					<td>Tel</td>
+					<td>{{sc.emergency_phone or '&nbsp;'}}&nbsp;{{sc.emergency_mobile or '&nbsp;'}}</td>
+				</tr>
+				<tr>
+					<td>Date Of Issue</td>
+					<td>Authorised Signatory</td>
+				</tr>
+			</tbody>
+		</table>
+	</td>
+</tr>
