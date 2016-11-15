@@ -1,13 +1,34 @@
 <html>
 	<head>
 		<style type="text/css">
+			.fullwidth {
+				width: 100%;
+			}
 			.scid-table {
-				font-weight:bold; font-size:5pt;
+				font-size:8pt;
+				border: solid 1px #ddd;
+				margin: 0px; padding: 0px;
+				line-height: 13px;
+			}
+
+			.scid-table td {
+				vertical-align: top;
+			}
+
+			.scid-label {
+				width: 40%;
+			}
+			.scid-values {
+				width: 60%;	
+			}
+			table {
+				margin-bottom: 0px;
 			}
 		</style>
 	</head>
 	<body>
-		<table style="width: 100%">
+		<div style="height:0.1cm"></div>
+		<table class="fullwidth scid-table">
 			<tbody>
 			{{ body_html }}
 			</tbody>
