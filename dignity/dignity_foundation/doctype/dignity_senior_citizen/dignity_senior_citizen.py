@@ -99,10 +99,8 @@ class DignitySeniorCitizen(Document):
 							self.tahsildar_no = str_new_tahsildar_series_no
 							frappe.db.sql("""update `tabDignity Tahsildar Master` set tahsildar_last_series = %s where parent = %s and tahsildar_city = %s and tahsildar_centre = %s""",(self.tahsildar_no,state,city,tahsildar_name))
 						else:
-							frappe.throw(_("Number series is not set up for State, City and Tahsildar Centre combination."))
-		print("call update card series",self.tahsildar_state,self.tahsildar_city,self.tahsildar_centre,self.card_number)
+							frappe.msgprint(_("Number series is not set up for State, City and Tahsildar Centre combination."))
 		gen_update_card_series(self.tahsildar_state,self.tahsildar_city,self.tahsildar_centre,self.card_number)
-		print("call update tahsildar series",self.tahsildar_state,self.tahsildar_city,self.tahsildar_name,self.tahsildar_no)
 		gen_update_tahsildar_series(self.tahsildar_state,self.tahsildar_city,self.tahsildar_name,self.tahsildar_no)
 
 @frappe.whitelist()
