@@ -30,7 +30,7 @@
 					<tr >
 						<td style="width: 40%;">
 						</td>
-						<td style="width: 60%; font-size: 7pt">
+						<td style="width: 60%;">
 							{{sc.address_line1 or '&nbsp;'}}
 							{% if sc.address_line2 %}
 								<br>{{sc.address_line2 or '&nbsp;'}}
@@ -92,7 +92,7 @@
 		<table class="fullwidth scid-table">
 			<tbody>
 				<tr>
-					<td colspan="2" style="padding-left: 20px; padding-top: 6px; height: 1.35cm; font-size: 7pt">
+					<td colspan="2" style="padding-left: 20px; padding-top: 6px; height: 1.35cm;">
 					{{sc.contact_name or '&nbsp;'}}<br>
 					{% if sc.emergency_address1 %}
 						{{sc.emergency_address1 or '&nbsp;'}}<br>
@@ -100,7 +100,6 @@
 					{% if sc.emergency_address2 %}
 						{{ sc.emergency_address2 or '&nbsp;'}}<br>
 					{% endif %}
-					{{sc.emergency_city or '&nbsp;'}}&nbsp;{{sc.emergency_pin_code or '&nbsp;'}}</td>
 				</tr>
 			</tbody>
 		</table>		
