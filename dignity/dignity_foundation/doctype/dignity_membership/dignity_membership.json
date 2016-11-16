@@ -63,7 +63,7 @@
    "read_only": 0, 
    "remember_last_selected_value": 0, 
    "report_hide": 0, 
-   "reqd": 1, 
+   "reqd": 0, 
    "search_index": 0, 
    "set_only_once": 0, 
    "unique": 0
@@ -1299,7 +1299,7 @@
  "issingle": 0, 
  "istable": 0, 
  "max_attachments": 0, 
- "modified": "2016-11-16 14:14:31.816535", 
+ "modified": "2016-11-16 14:25:06.362601", 
  "modified_by": "Administrator", 
  "module": "Dignity Foundation", 
  "name": "Dignity Membership", 
