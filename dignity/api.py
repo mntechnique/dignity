@@ -31,18 +31,31 @@ def bulk_print_memberships(names):
 	frappe.local.response.filecontent = dignity_get_pdf(final_html, options=pdf_options) #get_pdf(final_html, pdf_options)
 	frappe.local.response.type = "download"
 	
+# def prepare_bulk_print_html(names):
+# 	names = names.split(",")
+# 	html = ""
+# 	for name in names:
+# 		sc = { "sc": frappe.get_doc("Dignity Senior Citizen", name) }
+# 		html += frappe.render_template("dignity/templates/includes/dignity_senior_citizen_row.html", sc)
+
+# 	html_body = {"body_html" : html}
+
+# 	final_html = frappe.render_template("dignity/templates/includes/dignity_senior_citizen_bulk_print.html", html_body)
+# 	return final_html
+
+
 def prepare_bulk_print_html(names):
 	names = names.split(",")
 	html = ""
+	sc_list = []
 	for name in names:
-		sc = { "sc": frappe.get_doc("Dignity Senior Citizen", name) }
-		html += frappe.render_template("dignity/templates/includes/dignity_senior_citizen_row.html", sc)
+		sc_list.append(frappe.get_doc("Dignity Senior Citizen", name))
+		# sc = { "sc":  }
 
-	html_body = {"body_html" : html}
+	html_params = { "sc_list": sc_list }
 
-	final_html = frappe.render_template("dignity/templates/includes/dignity_senior_citizen_bulk_print.html", html_body)
+	final_html = frappe.render_template("dignity/templates/includes/dignity_sc_bulk_print.html", html_params)
 	return final_html
-
 
 def dignity_get_pdf(html, options=None):
 	fname = os.path.join("/tmp", "dignity-sc-list-{0}.pdf".format(frappe.generate_hash()))

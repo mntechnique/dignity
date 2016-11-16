@@ -1,0 +1,82 @@
+<style type="text/css">
+	* {
+		font-size: 8pt;
+	}
+</style>
+{% set offset = 0.0 %}
+{% set increment = 6.25 %}
+{% for sc in sc_list %}
+	<tr> 
+		<td>
+		<div style="position: absolute;top:{{ 0.4 + offset }}cm;left: 12.3cm;white-space:nowrap;">
+				{{sc.allergic_to}}
+		</div>
+		<div style="position: absolute;top:{{ 0.9 + offset }}cm;left: 12.5cm;white-space:nowrap;">
+				{{sc.disease}}
+		</div>
+		<div style="position: absolute;top:{{ 1.3 + offset }}cm;left: 13.3cm;white-space:nowrap;">
+				{{sc.medication}}
+		</div>
+		<div style="position: absolute;top:{{ 2 + offset }}cm;left: 9.5cm;white-space:nowrap;">
+				{{sc.contact_name}}
+		</div>
+		<div style="position: absolute;top:{{ 2.4 + offset }}cm;left: 9.5cm;white-space:nowrap;">
+				{{sc.emergency_address1}}
+		</div>
+		{% if sc.emergency_address2 %}
+		<div style="position: absolute;top:{{ 2.8 + offset }}cm;left: 9.5cm;white-space:nowrap;">
+				{{sc.emergency_address2}}
+		</div>
+		{% endif %}
+		<div style="position: absolute;top:{{ 3.4 + offset }}cm;left: 11.3cm;white-space:nowrap;">
+				{% if sc.emergency_phone and sc.emergency_mobile %}
+					{{ sc.emergency_phone + ' / ' + sc.emergency_mobile }}
+				{% elif sc.emergency_phone %}
+					{{ sc.emergency_phone }}
+				{% else %}
+					{{ sc.emergency_mobile }}
+				{% endif %}
+		</div>
+		<div style="position: absolute;top:{{ 2.6 + offset }}cm;left: 2.5cm;white-space:nowrap;">
+				{{sc.card_number}}
+		</div>
+		<div style="position: absolute;top:{{ 3.0 + offset }}cm;left: 2.0cm;white-space:nowrap;">
+				{{sc.first_name}}{{sc.surname}}
+		</div>
+		<div style="position: absolute;top:{{ 3.5 + offset }}cm;left: 3.8cm;white-space:nowrap;">
+			{%- if sc.date_of_birth -%}
+				{{frappe.utils.formatdate(sc.date_of_birth)}} - {{sc.age}} yrs
+			{%- else -%}
+				{%- if sc.year -%}
+					{{sc.year}} - {{sc.age}} yrs
+				{%- endif -%}
+			{%- endif -%}
+		</div>
+		<div style="position: absolute;top:{{ 4.0 + offset }}cm;left: 2.5cm;white-space:nowrap;">
+				{{sc.address_line1}}
+		</div>
+		{% if sc.address_line2 %}
+		<div style="position: absolute;top:{{ 4.4 + offset }}cm;left: 2.5cm;white-space:nowrap;">
+				{{sc.address_line2}}
+		</div>
+		{% endif %}
+		<div style="position: absolute;top:{{ 4.8 + offset }}cm;left: 2.5cm;white-space:nowrap;">
+				{{sc.city}}&nbsp;{{sc.pin_code}}
+		</div>
+		<div style="position: absolute;top:{{ 5.2 + offset }}cm;left: 2.3cm;white-space:nowrap;">
+				{% if sc.phone and sc.mobile %}
+					{{ sc.phone + ' / ' + sc.mobile }}
+				{% elif sc.phone %}
+					{{ sc.phone }}
+				{% else %}
+					{{ sc.mobile }}
+				{% endif %}
+		</div>
+		<div style="position: absolute;top:{{ 5.6 + offset }}cm;left: 3.5cm;white-space:nowrap;">
+				{{sc.blood_group}}
+		</div>
+	</div>
+	{% set offset = offset + increment %}
+	</td>
+	</tr>
+{% endfor %}	
