@@ -1,6 +1,6 @@
 {
  "allow_copy": 0, 
- "allow_import": 0, 
+ "allow_import": 1, 
  "allow_rename": 0, 
  "autoname": "DM.##########", 
  "beta": 0, 
@@ -1327,7 +1327,7 @@
  "issingle": 0, 
  "istable": 0, 
  "max_attachments": 0, 
- "modified": "2016-11-16 20:08:24.152318", 
+ "modified": "2016-11-16 21:00:36.083571", 
  "modified_by": "Administrator", 
  "module": "Dignity Foundation", 
  "name": "Dignity Membership", 
