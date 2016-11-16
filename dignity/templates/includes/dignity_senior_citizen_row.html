@@ -8,17 +8,27 @@
 					<td style="height: 75px; vertical-align: bottom">
 					</td>
 				</tr>
-				<tr class="fullwidth" ><td style="text-align:right; padding-top: 10px;">{{ sc.card_number or '&nbsp;' }}</td><td></td>
+				<tr class="fullwidth" >
+					<td style="padding-top: 10px; width: 20%"></td>
+					<td style="width: 80%"> {{ sc.card_number or '&nbsp;' }}</td>
 				</tr>
+			</tbody>
+		</table>
+		<table class="fullwidth scid-table">
+			<tbody>
 				<tr>
-					<td style="width: 50%;"></td>
-					<td style="width: 50%;">
+					<td style="width: 30%;"></td>
+					<td style="width: 70%;">
 						{{sc.first_name or '' }}&nbsp;{{ sc.surname or '&nbsp;'}}
 					</td>
 				</tr>
+			</tbody>
+		</table>
+		<table class="fullwidth scid-table">
+			<tbody>
 				<tr class="fullwidth">
-					<td style="width: 50%;"></td>
-					<td style="width: 50%;">
+					<td style="width: 40%;"></td>
+					<td style="width: 60%;">
 						{%- if sc.date_of_birth -%}
 							{{frappe.utils.formatdate(sc.date_of_birth)}} - {{sc.age}} yrs
 						{%- else -%}
@@ -27,26 +37,29 @@
 							{%- endif -%}
 						{%- endif -%}
 					</td>
-					<tr >
-						<td style="width: 50%;">
-						</td>
-						<td style="width: 50%; font-size: 7.5pt">
-							{{sc.address_line1 or '&nbsp;'}}
-							{% if sc.address_line2 %}
-								<br>{{sc.address_line2 or '&nbsp;'}}
-							{% endif %}
-						</td>
-					</tr>
 				</tr>
-				</tbody>
-			</table>
-			<table class="fullwidth scid-table">
-				<tbody>
+			</tbody>
+		</table>
+		<table class="fullwidth scid-table">
+			<tbody>
 				<tr class="fullwidth">
-					<td style="width: 50%;">
-						
+					<td style="width: 30%;">
 					</td>
-					<td style="width: 50%;">
+					<td style="width: 70%; font-size: 7.5pt">
+						{{sc.address_line1 or '&nbsp;'}}
+						{% if sc.address_line2 %}
+							<br>{{sc.address_line2 or '&nbsp;'}}
+						{% endif %}
+					</td>
+				</tr>
+				
+			</tbody>
+		</table>
+		<table class="fullwidth scid-table">
+			<tbody>
+				<tr class="fullwidth">
+					<td style="width: 30%;"></td>
+					<td style="width: 70%;">
 						{% if sc.phone and sc.mobile %}
 							{{ sc.phone + ' / ' + sc.mobile }}
 						{% elif sc.phone %}
@@ -58,7 +71,6 @@
 				</tr>
 				<tr  class="fullwidth">
 					<td style="width: 50%;">
-						
 					</td>
 					<td style="width: 50%;">
 						<div>{{sc.blood_group or '&nbsp;'}}</div>
@@ -67,31 +79,35 @@
 			</tbody>
 		</table>
 	</td>
-	<td style="width: 45%">
-		<table class="fullwidth scid-table" style="line-height: 10px;">
+	<td style="width: 45%; line-height: 8px;">
+		<table class="fullwidth scid-table">
 			<tbody>
-				<tr>
-					<th style="width: 60%"></th>
-					<th style="width: 40%"></th>
-				</tr>
-				<tr>
-					<td></td>
-					<td>{{sc.allergic_to or '&nbsp;'}}</td>
-				</tr>
-				<tr>
-					<td></td>
-					<td>{{sc.disease or '&nbsp;'}}</td>
-				</tr>
-				<tr>
-					<td></td>
-					<td>{{sc.medication or '&nbsp;'}}</td>
+				<tr class="fullwidth">
+					<td width="50%"></td>
+					<td width="50%">{{sc.allergic_to or '&nbsp;'}}</td>
 				</tr>
 			</tbody>
 		</table>
 		<table class="fullwidth scid-table">
 			<tbody>
-				<tr>
-					<td colspan="2" style="padding-left: 20px; padding-top: 6px; height: 1.35cm;">
+				<tr  class="fullwidth">
+					<td width="50%"></td>
+					<td width="50%">{{sc.disease or '&nbsp;'}}</td>
+				</tr>
+			</tbody>
+		</table>
+		<table class="fullwidth scid-table">
+			<tbody>
+				<tr class="fullwidth">
+					<td width="60%"></td>
+					<td width="40%">{{sc.medication or '&nbsp;'}}</td>
+				</tr>
+			
+		<table class="fullwidth scid-table">
+			<tbody>
+				<tr class="fullwidth">
+					<td width="20%">
+					<td width="80%" style="padding-left: 50px; padding-top: 10px; height: 1.35cm;">
 					{{sc.contact_name or '&nbsp;'}}<br>
 					{% if sc.emergency_address1 %}
 						{{sc.emergency_address1 or '&nbsp;'}}<br>
@@ -104,8 +120,9 @@
 		</table>		
 		<table class="fullwidth scid-table">
 			<tbody>
-				<tr>
-					<td style="padding-left: 80px">
+				<tr class="fullwidth">
+					<td width="40%">
+					<td width="70%">
 						{% if sc.emergency_phone and sc.emergency_mobile %}
 							{{ sc.emergency_phone + ' / ' + sc.emergency_mobile }}
 						{% elif sc.emergency_phone %}
