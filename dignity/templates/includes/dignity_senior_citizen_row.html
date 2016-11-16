@@ -30,7 +30,7 @@
 					<tr >
 						<td style="width: 50%;">
 						</td>
-						<td style="width: 50%; font-size: 8pt">
+						<td style="width: 50%; font-size: 7.5pt">
 							{{sc.address_line1 or '&nbsp;'}}
 							{% if sc.address_line2 %}
 								<br>{{sc.address_line2 or '&nbsp;'}}
@@ -97,7 +97,7 @@
 						{{sc.emergency_address1 or '&nbsp;'}}<br>
 					{% endif %}
 					{% if sc.emergency_address2 %}
-						{{ sc.emergency_address2 or '&nbsp;'}}<br>
+						{{ sc.emergency_address2 or '&nbsp;'}}
 					{% endif %}
 				</tr>
 			</tbody>
