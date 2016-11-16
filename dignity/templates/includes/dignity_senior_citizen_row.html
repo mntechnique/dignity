@@ -1,6 +1,6 @@
 <tr style="height: 6.25cm;">
-	<td style="width: 55%">
-		<table class="fullwidth scid-table">
+	<td style="width: 50%">
+		<table class="fullwidth scid-table" cellspacing="0" cellpadding="0">
 			<tbody>
 				<tr class="fullwidth">
 					<td style="height: 75px; vertical-align: bottom">
@@ -8,27 +8,27 @@
 					<td style="height: 75px; vertical-align: bottom">
 					</td>
 				</tr>
-				<tr class="fullwidth" >
-					<td style="padding-top: 10px; width: 20%"></td>
+				<tr class="fullwidth text-align-bottom">
+					<td style="padding-top: 15px; width: 20%"></td>
 					<td style="width: 80%"> {{ sc.card_number or '&nbsp;' }}</td>
 				</tr>
 			</tbody>
 		</table>
-		<table class="fullwidth scid-table">
+		<table class="fullwidth scid-table" cellspacing="0" cellpadding="0">
 			<tbody>
-				<tr>
-					<td style="width: 30%;"></td>
-					<td style="width: 70%;">
+				<tr class="fullwidth">
+					<td style="width: 35%;"></td>
+					<td style="width: 65%;">
 						{{sc.first_name or '' }}&nbsp;{{ sc.surname or '&nbsp;'}}
 					</td>
 				</tr>
 			</tbody>
 		</table>
-		<table class="fullwidth scid-table">
+		<table class="fullwidth scid-table" cellspacing="0" cellpadding="0">
 			<tbody>
 				<tr class="fullwidth">
-					<td style="width: 40%;"></td>
-					<td style="width: 60%;">
+					<td style="width: 55%;"></td>
+					<td style="width: 45%;">
 						{%- if sc.date_of_birth -%}
 							{{frappe.utils.formatdate(sc.date_of_birth)}} - {{sc.age}} yrs
 						{%- else -%}
@@ -40,12 +40,12 @@
 				</tr>
 			</tbody>
 		</table>
-		<table class="fullwidth scid-table">
+		<table class="fullwidth scid-table" cellspacing="0" cellpadding="0">
 			<tbody>
 				<tr class="fullwidth">
-					<td style="width: 30%;">
+					<td style="width: 40%;">
 					</td>
-					<td style="width: 70%; font-size: 7.5pt">
+					<td style="width: 60%; font-size: 7.5pt">
 						{{sc.address_line1 or '&nbsp;'}}
 						{% if sc.address_line2 %}
 							<br>{{sc.address_line2 or '&nbsp;'}}
@@ -55,7 +55,7 @@
 				
 			</tbody>
 		</table>
-		<table class="fullwidth scid-table">
+		<table class="fullwidth scid-table" cellspacing="0" cellpadding="0">
 			<tbody>
 				<tr class="fullwidth">
 					<td style="width: 30%;"></td>
@@ -69,7 +69,7 @@
 						{% endif %}
 					</td>
 				</tr>
-				<tr  class="fullwidth">
+				<tr class="fullwidth">
 					<td style="width: 50%;">
 					</td>
 					<td style="width: 50%;">
@@ -79,8 +79,8 @@
 			</tbody>
 		</table>
 	</td>
-	<td style="width: 45%; line-height: 8px;">
-		<table class="fullwidth scid-table">
+	<td style="width: 50%; line-height: 8px;">
+		<table class="fullwidth scid-table" cellspacing="0" cellpadding="0">
 			<tbody>
 				<tr class="fullwidth">
 					<td width="50%"></td>
@@ -88,7 +88,7 @@
 				</tr>
 			</tbody>
 		</table>
-		<table class="fullwidth scid-table">
+		<table class="fullwidth scid-table" cellspacing="0" cellpadding="0">
 			<tbody>
 				<tr  class="fullwidth">
 					<td width="50%"></td>
@@ -96,14 +96,14 @@
 				</tr>
 			</tbody>
 		</table>
-		<table class="fullwidth scid-table">
+		<table class="fullwidth scid-table" cellspacing="0" cellpadding="0">
 			<tbody>
 				<tr class="fullwidth">
 					<td width="60%"></td>
 					<td width="40%">{{sc.medication or '&nbsp;'}}</td>
 				</tr>
 			
-		<table class="fullwidth scid-table">
+		<table class="fullwidth scid-table" cellspacing="0" cellpadding="0">
 			<tbody>
 				<tr class="fullwidth">
 					<td width="20%">
@@ -118,7 +118,7 @@
 				</tr>
 			</tbody>
 		</table>		
-		<table class="fullwidth scid-table">
+		<table class="fullwidth scid-table" cellspacing="0" cellpadding="0">
 			<tbody>
 				<tr class="fullwidth">
 					<td width="40%">
