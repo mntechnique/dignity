@@ -59,10 +59,14 @@
 		<div style="position: absolute;top:{{ 4.4 + offset }}cm;left: 2.5cm;white-space:nowrap;">
 				{{sc.address_line2}}
 		</div>
-		{% endif %}
 		<div style="position: absolute;top:{{ 4.8 + offset }}cm;left: 2.5cm;white-space:nowrap;">
-				{{sc.city}}&nbsp;{{sc.pin_code}}
+				{{sc.city or ''}} {{ sc.pin_code or ''}}
 		</div>
+		{% else %}
+		<div style="position: absolute;top:{{ 4.4 + offset }}cm;left: 2.5cm;white-space:nowrap;">
+				{{sc.city or ''}} {{ sc.pin_code or ''}}
+		</div>
+		{% endif %}
 		<div style="position: absolute;top:{{ 5.2 + offset }}cm;left: 2.3cm;white-space:nowrap;">
 				{% if sc.phone and sc.mobile %}
 					{{ sc.phone + ' / ' + sc.mobile }}
@@ -73,7 +77,7 @@
 				{% endif %}
 		</div>
 		<div style="position: absolute;top:{{ 5.6 + offset }}cm;left: 3.5cm;white-space:nowrap;">
-				{{sc.blood_group}}
+				{{sc.blood_group or ''}}
 		</div>
 	</div>
 	{% set offset = offset + increment %}
