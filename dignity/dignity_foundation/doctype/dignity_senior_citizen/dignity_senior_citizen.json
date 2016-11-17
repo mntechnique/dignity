@@ -338,7 +338,7 @@
    "remember_last_selected_value": 0, 
    "report_hide": 0, 
    "reqd": 1, 
-   "search_index": 0, 
+   "search_index": 1, 
    "set_only_once": 0, 
    "unique": 0
   }, 
@@ -1163,7 +1163,7 @@
  "issingle": 0, 
  "istable": 0, 
  "max_attachments": 0, 
- "modified": "2016-11-16 16:04:45.207042", 
+ "modified": "2016-11-17 10:34:19.035441", 
  "modified_by": "Administrator", 
  "module": "Dignity Foundation", 
  "name": "Dignity Senior Citizen", 
