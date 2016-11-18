@@ -32,9 +32,9 @@
                 {% if sc.emergency_phone and sc.emergency_mobile %}
                     {{ sc.emergency_phone + ' / ' + sc.emergency_mobile }}
                 {% elif sc.emergency_phone %}
-                    {{ sc.emergency_phone }}
+                    {{ sc.emergency_phone or ' ' }}
                 {% else %}
-                    {{ sc.emergency_mobile }}
+                    {{ sc.emergency_mobile or ' '}}
                 {% endif %}
         </div>
         <div style="position: absolute;top:{{ 2.6 - 0.2 + offset }}cm;left: {{ 4.5 - 0.1 }}cm;white-space:nowrap;">
@@ -60,24 +60,24 @@
                 {{sc.address_line2}}
         </div>
         <div style="position: absolute;top:{{ 4.8 - 0.2 + offset }}cm;left: 4.0cm;white-space:nowrap;">
-                {{sc.city}} {{ sc.pin_code}}
+                {{sc.city or ' '}} {{ sc.pin_code or ' ' }}
         </div>
         {% else %}
         <div style="position: absolute;top:{{ 4.4 - 0.2 + offset }}cm;left: 4.0cm;white-space:nowrap;">
-                {{sc.city}} {{ sc.pin_code}}
+                {{sc.city or ' '}} {{ sc.pin_code or ' '}}
         </div>
         {% endif %}
         <div style="position: absolute;top:{{ 5.2 - 0.2 + offset }}cm;left: 4.3cm;white-space:nowrap;">
                 {% if sc.phone and sc.mobile %}
                     {{ sc.phone + ' / ' + sc.mobile }}
                 {% elif sc.phone %}
-                    {{ sc.phone }}
+                    {{ sc.phone or ' ' }}
                 {% else %}
-                    {{ sc.mobile }}
+                    {{ sc.mobile or ' '}}
                 {% endif %}
         </div>
         <div style="position: absolute;top:{{ 5.6 - 0.2 + offset }}cm;left: 5.5cm;white-space:nowrap;">
-                {{sc.blood_group or missingval}}
+                {{sc.blood_group or ' '}}
         </div>
     </div>
     {% set offset = offset + increment %}
