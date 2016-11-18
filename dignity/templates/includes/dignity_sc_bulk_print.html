@@ -4,82 +4,82 @@
         font-weight: bold;
     }
 </style>
-{% set missingval = 'Nil' %}
 {% set offset = 0.0 %}
+{% set missingval = 'Nil' %}
 {% set increment = 6.20 %}
 {% for sc in sc_list %}
-        <div style="position: absolute;top:{{ 0.4 + offset }}cm;left: 14.3cm;white-space:nowrap;">
-                {{sc.allergic_to or missingval}}
+        <div style="position: absolute;top:{{ 0.4 - 0.2 + offset }}cm;left: 14.3cm;white-space:nowrap;">
+                {{sc.allergic_to or '&nbsp;'}}
         </div>
-        <div style="position: absolute;top:{{ 0.9 + offset }}cm;left: 14.5cm;white-space:nowrap;">
-                {{sc.disease or missingval}}
+        <div style="position: absolute;top:{{ 0.9 - 0.2 + offset }}cm;left: 14.5cm;white-space:nowrap;">
+                {{sc.disease or '&nbsp;'}}
         </div>
-        <div style="position: absolute;top:{{ 1.3 + offset }}cm;left: 15.3cm;white-space:nowrap;">
-                {{sc.medication or missingval}}
+        <div style="position: absolute;top:{{ 1.3 - 0.2 + offset }}cm;left: 15.3cm;white-space:nowrap;">
+                {{sc.medication or '&nbsp;'}}
         </div>
-        <div style="position: absolute;top:{{ 2 + offset }}cm;left: 11.0cm;white-space:nowrap;">
-                {{sc.contact_name or missingval}}
+        <div style="position: absolute;top:{{ 2 - 0.1 + offset }}cm;left: 11.0cm;white-space:nowrap;">
+                {{sc.contact_name or '&nbsp;'}}
         </div>
-        <div style="position: absolute;top:{{ 2.4 + offset }}cm;left: 11.0cm;white-space:nowrap;">
-                {{sc.emergency_address1}}
+        <div style="position: absolute;top:{{ 2.4 - 0.1 + offset }}cm;left: 11.0cm;white-space:nowrap;">
+                {{sc.emergency_address1 or '&nbsp;'}}
         </div>
         {% if sc.emergency_address2 %}
-        <div style="position: absolute;top:{{ 2.8 + offset }}cm;left: 11.0cm;white-space:nowrap;">
+        <div style="position: absolute;top:{{ 2.8 - 0.1 + offset }}cm;left: 11.0cm;white-space:nowrap;">
                 {{sc.emergency_address2}}
         </div>
         {% endif %}
-        <div style="position: absolute;top:{{ 3.4 + offset }}cm;left: 12.8cm;white-space:nowrap;">
+        <div style="position: absolute;top:{{ 3.4 - 0.2 + offset }}cm;left: 12.8cm;white-space:nowrap;">
                 {% if sc.emergency_phone and sc.emergency_mobile %}
                     {{ sc.emergency_phone + ' / ' + sc.emergency_mobile }}
                 {% elif sc.emergency_phone %}
-                    {{ sc.emergency_phone or ' '}}
+                    {{ sc.emergency_phone }}
                 {% else %}
-                    {{ sc.emergency_mobile  or ' '}}
+                    {{ sc.emergency_mobile }}
                 {% endif %}
         </div>
-        <div style="position: absolute;top:{{ 2.6 + offset }}cm;left: 4.5cm;white-space:nowrap;">
-                {{sc.card_number or ' '}}
+        <div style="position: absolute;top:{{ 2.6 - 0.2 + offset }}cm;left: 4.5cm;white-space:nowrap;">
+                {{sc.card_number or '&nbsp;'}}
         </div>
-        <div style="position: absolute;top:{{ 3.0 + offset }}cm;left: 4.0cm;white-space:nowrap;">
-                {{sc.first_name or ' '}} {{sc.surname or ' '}}
+        <div style="position: absolute;top:{{ 3.0 - 0.2 + offset }}cm;left: 4.0cm;white-space:nowrap;">
+                {{sc.first_name or '&nbsp;'}} {{sc.surname or '&nbsp;'}}
         </div>
-        <div style="position: absolute;top:{{ 3.5 + offset }}cm;left: 5.7cm;white-space:nowrap;">
+        <div style="position: absolute;top:{{ 3.5 - 0.2 + offset }}cm;left: 5.8cm;white-space:nowrap;">
             {%- if sc.date_of_birth -%}
-                {{frappe.utils.formatdate(sc.date_of_birth)}} - {{sc.age or ' '}} yrs
+                {{frappe.utils.formatdate(sc.date_of_birth)}} - {{sc.age or '&nbsp;'}} yrs
             {%- else -%}
                 {%- if sc.year -%}
-                    {{sc.year or ' '}} - {{sc.age or missingval}} yrs
+                    {{sc.year or '&nbsp;'}} - {{sc.age or '&nbsp;'}} yrs
                 {%- endif -%}
             {%- endif -%}
         </div>
-        <div style="position: absolute;top:{{ 4.0 + offset }}cm;left: 4.0cm;white-space:nowrap;">
-                {{sc.address_line1 or ' '}}
+        <div style="position: absolute;top:{{ 4.0 - 0.2 + offset }}cm;left: 4.0cm;white-space:nowrap;">
+                {{sc.address_line1 or '&nbsp;'}}
         </div>
         {% if sc.address_line2 %}
-        <div style="position: absolute;top:{{ 4.4 + offset }}cm;left: 4.0cm;white-space:nowrap;">
-                {{sc.address_line2 or ' '}}
+        <div style="position: absolute;top:{{ 4.4 - 0.2 + offset }}cm;left: 4.0cm;white-space:nowrap;">
+                {{sc.address_line2 or '&nbsp;'}}
         </div>
-        <div style="position: absolute;top:{{ 4.8 + offset }}cm;left: 4.0cm;white-space:nowrap;">
-                {{sc.city or ' '}} {{ sc.pin_code or ' '}}
+        <div style="position: absolute;top:{{ 4.8 - 0.2 + offset }}cm;left: 4.0cm;white-space:nowrap;">
+                {{sc.city or '&nbsp;'}} {{ sc.pin_code or '&nbsp;'}}
         </div>
         {% else %}
-        <div style="position: absolute;top:{{ 4.4 + offset }}cm;left: 4.0cm;white-space:nowrap;">
-                {{sc.city or ' '}} {{ sc.pin_code or ' '}}
+        <div style="position: absolute;top:{{ 4.4 - 0.2 + offset }}cm;left: 4.0cm;white-space:nowrap;">
+                {{sc.city or '&nbsp;'}} {{ sc.pin_code or '&nbsp;'}}
         </div>
         {% endif %}
-        <div style="position: absolute;top:{{ 5.2 + offset }}cm;left: 4.3cm;white-space:nowrap;">
+        <div style="position: absolute;top:{{ 5.2 - 0.2 + offset }}cm;left: 4.3cm;white-space:nowrap;">
                 {% if sc.phone and sc.mobile %}
                     {{ sc.phone + ' / ' + sc.mobile }}
                 {% elif sc.phone %}
-                    {{ sc.phone or ' ' }}
+                    {{ sc.phone }}
                 {% else %}
-                    {{ sc.mobile or ' '}}
+                    {{ sc.mobile }}
                 {% endif %}
         </div>
-        <div style="position: absolute;top:{{ 5.6 + offset }}cm;left: 5.5cm;white-space:nowrap;">
-                {{sc.blood_group or missingval}}
+        <div style="position: absolute;top:{{ 5.6 - 0.2 + offset }}cm;left: 5.5cm;white-space:nowrap;">
+                {{sc.blood_group or '&nbsp;'}}
         </div>
     </div>
     {% set offset = offset + increment %}
 
-{% endfor %}
+{% endfor %}   
