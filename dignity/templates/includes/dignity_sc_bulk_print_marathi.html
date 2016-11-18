@@ -8,16 +8,16 @@
 {% set increment = 6.20 %}
 {% for sc in sc_list %}
         <div style="position: absolute;top:{{ 0.4 + offset }}cm;left: 14.3cm;white-space:nowrap;">
-                {{sc.allergic_to or 'Nil'}}
+                {{sc.allergic_to or ' '}}
         </div>
         <div style="position: absolute;top:{{ 0.9 + offset }}cm;left: 14.5cm;white-space:nowrap;">
-                {{sc.disease or 'Nil'}}
+                {{sc.disease or ' '}}
         </div>
         <div style="position: absolute;top:{{ 1.3 + offset }}cm;left: 15.3cm;white-space:nowrap;">
-                {{sc.medication or 'Nil'}}
+                {{sc.medication or ' '}}
         </div>
         <div style="position: absolute;top:{{ 2 + offset }}cm;left: 11.0cm;white-space:nowrap;">
-                {{sc.contact_name or 'Nil'}}
+                {{sc.contact_name or ' '}}
         </div>
         <div style="position: absolute;top:{{ 2.4 + offset }}cm;left: 11.0cm;white-space:nowrap;">
                 {{sc.emergency_address1}}
@@ -31,13 +31,13 @@
                 {% if sc.emergency_phone and sc.emergency_mobile %}
                     {{ sc.emergency_phone + ' / ' + sc.emergency_mobile }}
                 {% elif sc.emergency_phone %}
-                    {{ sc.emergency_phone or 'Nil'}}
+                    {{ sc.emergency_phone or ' '}}
                 {% else %}
-                    {{ sc.emergency_mobile  or 'Nil'}}
+                    {{ sc.emergency_mobile  or ' '}}
                 {% endif %}
         </div>
         <div style="position: absolute;top:{{ 2.6 + offset }}cm;left: 4.5cm;white-space:nowrap;">
-                {{sc.card_number or 'Nil'}}
+                {{sc.card_number or ' '}}
         </div>
         <div style="position: absolute;top:{{ 3.0 + offset }}cm;left: 4.0cm;white-space:nowrap;">
                 {{sc.first_name or ' '}} {{sc.surname or ' '}}
@@ -70,13 +70,13 @@
                 {% if sc.phone and sc.mobile %}
                     {{ sc.phone + ' / ' + sc.mobile }}
                 {% elif sc.phone %}
-                    {{ sc.phone or 'Nil' }}
+                    {{ sc.phone or ' ' }}
                 {% else %}
-                    {{ sc.mobile or 'Nil'}}
+                    {{ sc.mobile or ' '}}
                 {% endif %}
         </div>
         <div style="position: absolute;top:{{ 5.6 + offset }}cm;left: 5.5cm;white-space:nowrap;">
-                {{sc.blood_group or 'Nil'}}
+                {{sc.blood_group or ' '}}
         </div>
     </div>
     {% set offset = offset + increment %}
