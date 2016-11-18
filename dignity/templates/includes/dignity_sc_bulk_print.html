@@ -18,10 +18,10 @@
                 {{sc.medication or missingval}}
         </div>
         <div style="position: absolute;top:{{ 2 - 0.1 + offset }}cm;left: 11.0cm;white-space:nowrap;">
-                {{sc.contact_name or missingval}}
+                {{sc.contact_name}}
         </div>
         <div style="position: absolute;top:{{ 2.4 - 0.1 + offset }}cm;left: 11.0cm;white-space:nowrap;">
-                {{sc.emergency_address1 or missingval}}
+                {{sc.emergency_address1}}
         </div>
         {% if sc.emergency_address2 %}
         <div style="position: absolute;top:{{ 2.8 - 0.1 + offset }}cm;left: 11.0cm;white-space:nowrap;">
@@ -38,33 +38,33 @@
                 {% endif %}
         </div>
         <div style="position: absolute;top:{{ 2.6 - 0.2 + offset }}cm;left: {{ 4.5 - 0.1 }}cm;white-space:nowrap;">
-                {{sc.card_number or missingval}}
+                {{sc.card_number}}
         </div>
         <div style="position: absolute;top:{{ 3.0 - 0.2 + offset }}cm;left: 4.0cm;white-space:nowrap;">
-                {{sc.first_name or missingval}} {{sc.surname or missingval}}
+                {{sc.first_name}} {{sc.surname}}
         </div>
         <div style="position: absolute;top:{{ 3.5 - 0.2 + offset }}cm;left: {{ 5.8 - 0.1 }}cm;white-space:nowrap;">
             {%- if sc.date_of_birth -%}
-                {{frappe.utils.formatdate(sc.date_of_birth)}} - {{sc.age or missingval}} yrs
+                {{frappe.utils.formatdate(sc.date_of_birth)}} - {{sc.age}} yrs
             {%- else -%}
                 {%- if sc.year -%}
-                    {{sc.year or missingval}} - {{sc.age or missingval}} yrs
+                    {{sc.year}} - {{sc.age}} yrs
                 {%- endif -%}
             {%- endif -%}
         </div>
         <div style="position: absolute;top:{{ 4.0 - 0.2 + offset }}cm;left: 4.0cm;white-space:nowrap;">
-                {{sc.address_line1 or missingval}}
+                {{sc.address_line1}}
         </div>
         {% if sc.address_line2 %}
         <div style="position: absolute;top:{{ 4.4 - 0.2 + offset }}cm;left: 4.0cm;white-space:nowrap;">
-                {{sc.address_line2 or missingval}}
+                {{sc.address_line2}}
         </div>
         <div style="position: absolute;top:{{ 4.8 - 0.2 + offset }}cm;left: 4.0cm;white-space:nowrap;">
-                {{sc.city or missingval}} {{ sc.pin_code or missingval}}
+                {{sc.city}} {{ sc.pin_code}}
         </div>
         {% else %}
         <div style="position: absolute;top:{{ 4.4 - 0.2 + offset }}cm;left: 4.0cm;white-space:nowrap;">
-                {{sc.city or missingval}} {{ sc.pin_code or missingval}}
+                {{sc.city}} {{ sc.pin_code}}
         </div>
         {% endif %}
         <div style="position: absolute;top:{{ 5.2 - 0.2 + offset }}cm;left: 4.3cm;white-space:nowrap;">
