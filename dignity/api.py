@@ -6,14 +6,14 @@ import os
 
 
 @frappe.whitelist()
-def bulk_print_memberships(names):
+def bulk_print_memberships(names, lang):
 	if not frappe.has_permission("Dignity Senior Citizen", "write"):
 		frappe.throw(_("Not permitted"), frappe.PermissionError)
 
 	if len(names) == 0:
 		frappe.msgprint("No rows selected.")
 	
-	final_html = prepare_bulk_print_html(names)
+	final_html = prepare_bulk_print_html(names, lang)
 
 	pdf_options = { 
 					"page-height" : "25.4cm",
@@ -44,7 +44,7 @@ def bulk_print_memberships(names):
 # 	return final_html
 
 
-def prepare_bulk_print_html(names):
+def prepare_bulk_print_html(names, lang):
 	names = names.split(",")
 	html = ""
 	sc_list = []
@@ -54,7 +54,11 @@ def prepare_bulk_print_html(names):
 
 	html_params = { "sc_list": sc_list }
 
-	final_html = frappe.render_template("dignity/templates/includes/dignity_sc_bulk_print.html", html_params)
+	if lang == "MAR":
+		final_html = frappe.render_template("dignity/templates/includes/dignity_sc_bulk_print_marathi.html", html_params)
+	else:
+		final_html = frappe.render_template("dignity/templates/includes/dignity_sc_bulk_print.html", html_params)
+
 	return final_html
 
 def dignity_get_pdf(html, options=None):
