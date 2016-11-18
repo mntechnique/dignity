@@ -50,9 +50,10 @@ def prepare_bulk_print_html(names, lang):
 	sc_list = []
 	for name in names:
 		sc_list.append(frappe.get_doc("Dignity Senior Citizen", name))
-		# sc = { "sc":  }
+		
 
-	html_params = { "sc_list": sc_list }
+	has_sc_with_disease = [sc for sc in sc_list if (sc.allergic_to or sc.disease or sc.medication)]
+	html_params = { "sc_list": sc_list, "has_sc_with_disease": has_sc_with_disease }
 
 	if lang == "MAR":
 		final_html = frappe.render_template("dignity/templates/includes/dignity_sc_bulk_print_marathi.html", html_params)
