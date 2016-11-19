@@ -116,6 +116,16 @@ frappe.ui.form.on("Dignity Senior Citizen", {
 			var current_year = today.toString().substring(0,4);
 			var years_diff = current_year-senior_citizen.year;
 			frappe.model.set_value(cdt,cdn,"age",years_diff);
-		} 
+		} else {
+			if (senior_citizen.date_of_birth) {
+				var today = frappe.datetime.get_today();
+				var date_of_birth = senior_citizen.date_of_birth;
+				year = senior_citizen.date_of_birth.toString().substring(0,4);
+				var days_diff = frappe.datetime.get_day_diff(today,senior_citizen.date_of_birth);
+				age = Math.round(days_diff/365);
+				frappe.model.set_value(cdt,cdn,"age",age);
+				frappe.model.set_value(cdt,cdn,"year",year);
+			} 
+		}
  	}
 });
