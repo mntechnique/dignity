@@ -62,7 +62,7 @@ def prepare_bulk_print_html(names, lang):
 	if lang == "MAR":
 		final_html = frappe.render_template("dignity/templates/includes/dignity_sc_bulk_print_marathi.html", html_params)
 	else:
-		final_html = frappe.render_template("dignity/templates/includes/dignity_sc_bulk_print_2.html", html_params)
+		final_html = frappe.render_template("dignity/templates/includes/dignity_sc_bulk_print.html", html_params)
 
 	return final_html
 
