@@ -46,11 +46,15 @@ def bulk_print_memberships(names, lang):
 
 def prepare_bulk_print_html(names, lang):
 	names = names.split(",")
+
+	if len(names) > 4:
+		frappe.throw("The system cannot print more than 4 Senior Citizen records at a time.")
+
 	html = ""
 	sc_list = []
 	for name in names:
 		sc_list.append(frappe.get_doc("Dignity Senior Citizen", name))
-		
+	
 
 	has_sc_with_disease = [sc for sc in sc_list if (sc.allergic_to or sc.disease or sc.medication)]
 	html_params = { "sc_list": sc_list, "has_sc_with_disease": has_sc_with_disease }
@@ -58,7 +62,7 @@ def prepare_bulk_print_html(names, lang):
 	if lang == "MAR":
 		final_html = frappe.render_template("dignity/templates/includes/dignity_sc_bulk_print_marathi.html", html_params)
 	else:
-		final_html = frappe.render_template("dignity/templates/includes/dignity_sc_bulk_print.html", html_params)
+		final_html = frappe.render_template("dignity/templates/includes/dignity_sc_bulk_print_2.html", html_params)
 
 	return final_html
 
