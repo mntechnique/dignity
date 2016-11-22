@@ -43,6 +43,27 @@ def bulk_print_memberships(names, lang):
 # 	final_html = frappe.render_template("dignity/templates/includes/dignity_senior_citizen_bulk_print.html", html_body)
 # 	return final_html
 
+# def prepare_bulk_print_html(names, lang):
+# 	names = names.split(",")
+
+# 	if len(names) > 4:
+# 		frappe.throw("The system cannot print more than 4 Senior Citizen records at a time.")
+
+# 	html = ""
+# 	sc_list = []
+# 	for name in names:
+# 		sc_list.append(frappe.get_doc("Dignity Senior Citizen", name))
+	
+
+# 	has_sc_with_disease = [sc for sc in sc_list if (sc.allergic_to or sc.disease or sc.medication)]
+# 	html_params = { "sc_list": sc_list, "has_sc_with_disease": has_sc_with_disease }
+
+# 	if lang == "MAR":
+# 		final_html = frappe.render_template("dignity/templates/includes/dignity_sc_bulk_print_marathi.html", html_params)
+# 	else:
+# 		final_html = frappe.render_template("dignity/templates/includes/dignity_sc_bulk_print.html", html_params)
+
+# 	return final_html
 
 def prepare_bulk_print_html(names, lang):
 	names = names.split(",")
@@ -52,19 +73,24 @@ def prepare_bulk_print_html(names, lang):
 
 	html = ""
 	sc_list = []
-	for name in names:
-		sc_list.append(frappe.get_doc("Dignity Senior Citizen", name))
-	
-
-	has_sc_with_disease = [sc for sc in sc_list if (sc.allergic_to or sc.disease or sc.medication)]
-	html_params = { "sc_list": sc_list, "has_sc_with_disease": has_sc_with_disease }
 
 	if lang == "MAR":
+		for name in names:
+			sc_list.append(frappe.get_doc("Dignity Senior Citizen Marathi", name))
+	
+		has_sc_with_disease = [sc for sc in sc_list if (sc.allergic_to or sc.disease or sc.medication)]
+		html_params = { "sc_list": sc_list, "has_sc_with_disease": has_sc_with_disease }
 		final_html = frappe.render_template("dignity/templates/includes/dignity_sc_bulk_print_marathi.html", html_params)
 	else:
+		for name in names:
+			sc_list.append(frappe.get_doc("Dignity Senior Citizen", name))
+	
+		has_sc_with_disease = [sc for sc in sc_list if (sc.allergic_to or sc.disease or sc.medication)]
+		html_params = { "sc_list": sc_list, "has_sc_with_disease": has_sc_with_disease }
 		final_html = frappe.render_template("dignity/templates/includes/dignity_sc_bulk_print.html", html_params)
-
+	
 	return final_html
+
 
 def dignity_get_pdf(html, options=None):
 	fname = os.path.join("/tmp", "dignity-sc-list-{0}.pdf".format(frappe.generate_hash()))

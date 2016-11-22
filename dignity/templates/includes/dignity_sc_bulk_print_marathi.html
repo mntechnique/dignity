@@ -20,21 +20,15 @@
                 {{sc.contact_name or ' '}}
         </div>
         <div style="position: absolute;top:{{ 2.4 + offset }}cm;left: 11.0cm;white-space:nowrap;">
-                {{sc.emergency_address1}}
+                {{sc.emergency_address1 or ' '}}
         </div>
         {% if sc.emergency_address2 %}
         <div style="position: absolute;top:{{ 2.8 + offset }}cm;left: 11.0cm;white-space:nowrap;">
-                {{sc.emergency_address2}}
+                {{sc.emergency_address2 or ' '}}
         </div>
         {% endif %}
         <div style="position: absolute;top:{{ 3.4 + offset }}cm;left: 12.8cm;white-space:nowrap;">
-                {% if sc.emergency_phone and sc.emergency_mobile %}
-                    {{ sc.emergency_phone + ' / ' + sc.emergency_mobile }}
-                {% elif sc.emergency_phone %}
-                    {{ sc.emergency_phone or ' '}}
-                {% else %}
-                    {{ sc.emergency_mobile  or ' '}}
-                {% endif %}
+                {{ sc.emergency_phone_mobile or ''}}
         </div>
         <div style="position: absolute;top:{{ 2.6 + offset }}cm;left: 4.5cm;white-space:nowrap;">
                 {{sc.card_number or ' '}}
@@ -67,13 +61,7 @@
         </div>
         {% endif %}
         <div style="position: absolute;top:{{ 5.2 + offset }}cm;left: 4.3cm;white-space:nowrap;">
-                {% if sc.phone and sc.mobile %}
-                    {{ sc.phone + ' / ' + sc.mobile }}
-                {% elif sc.phone %}
-                    {{ sc.phone or ' ' }}
-                {% else %}
-                    {{ sc.mobile or ' '}}
-                {% endif %}
+                {{ sc.phone or ' ' }}
         </div>
         <div style="position: absolute;top:{{ 5.6 + offset }}cm;left: 5.5cm;white-space:nowrap;">
                 {{sc.blood_group or ' '}}
