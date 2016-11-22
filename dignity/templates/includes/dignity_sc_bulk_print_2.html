@@ -11,26 +11,26 @@
 
 {% set offset_0 = 0.0 %}
 {% set offset_1 = 6.20 %}
-{% set offset_2 = 12.40 %}
-{% set offset_3 = 18.6 %}
+{% set offset_2 = 12.50 %}
+{% set offset_3 = 18.70 %}
 
 {% set offset_disease_0 = 0.0 %}
-{% set offset_disease_1 = 6.20 %}
-{% set offset_disease_2 = 12.40 %}
-{% set offset_disease_3 = 18.6 %}
+{% set offset_disease_1 = 6.15 %}
+{% set offset_disease_2 = 12.30 %}
+{% set offset_disease_3 = 18.45 %}
 
 
 {% if has_sc_with_disease %}
     {# 'with disease' #}
 
     <div>
-        <div style="position: absolute;top:{{ 0.45 + offset_0 }}cm;left: 14.3cm;white-space:nowrap;">
+        <div style="position: absolute;top:{{ 0.45 + offset_0 }}cm;left: 14cm;white-space:nowrap;">
                 {{sc_list[0].allergic_to or missingvalue}}
         </div>
-        <div style="position: absolute;top:{{ 0.9 + offset_0 }}cm;left: 14.5cm;white-space:nowrap;">
+        <div style="position: absolute;top:{{ 0.9 + offset_0 }}cm;left: 14.1cm;white-space:nowrap;">
                 {{sc_list[0].disease or missingvalue}}
         </div>
-        <div style="position: absolute;top:{{ 1.3 + offset_0 }}cm;left: 15cm;white-space:nowrap;">
+        <div style="position: absolute;top:{{ 1.3 + offset_0 }}cm;left: 14.5cm;white-space:nowrap;">
                 {{sc_list[0].medication or missingvalue}}
         </div>
         <div style="position: absolute;top:{{ 2.1 + offset_0 }}cm;left: 11.0cm;white-space:nowrap;">
@@ -44,7 +44,7 @@
                 {{sc_list[0].emergency_address2 or ' '}}
         </div>
         {% endif %}
-        <div style="position: absolute;top:{{ 3.5 + offset_0 }}cm;left: 12.8cm;white-space:nowrap;">
+        <div style="position: absolute;top:{{ 3.3 + offset_0 }}cm;left: 12.8cm;white-space:nowrap;">
                 {% if sc_list[0].emergency_phone and sc_list[0].emergency_mobile %}
                     {{ sc_list[0].emergency_phone + ' / ' + sc_list[0].emergency_mobile }}
                 {% elif sc_list[0].emergency_phone %}
@@ -59,7 +59,7 @@
         <div style="position: absolute;top:{{ 3.1 + offset_0 }}cm;left: 4.0cm;white-space:nowrap;">
                 {{sc_list[0].first_name}} {{sc_list[0].surname or ' '}}
         </div>
-        <div style="position: absolute;top:{{ 3.6 + offset_0 }}cm;left: {{ 5.8  }}cm;white-space:nowrap;">
+        <div style="position: absolute;top:{{ 3.5 + offset_0 }}cm;left: {{ 5.8  }}cm;white-space:nowrap;">
             {%- if sc_list[0].date_of_birth -%}
                 {{frappe.utils.formatdate(sc_list[0].date_of_birth)}} - {{sc_list[0].age}} yrs
             {%- else -%}
@@ -68,22 +68,22 @@
                 {%- endif -%}
             {%- endif -%}
         </div>
-        <div style="position: absolute;top:{{ 4.1 + offset_0 }}cm;left: 4.0cm;white-space:nowrap;">
+        <div style="position: absolute;top:{{ 3.9 + offset_0 }}cm;left: 4.0cm;white-space:nowrap;">
                 {{sc_list[0].address_line1}}
         </div>
         {% if sc_list[0].address_line2 %}
-        <div style="position: absolute;top:{{ 4.5 + offset_0 }}cm;left: 4.0cm;white-space:nowrap;">
+        <div style="position: absolute;top:{{ 4.3 + offset_0 }}cm;left: 4.0cm;white-space:nowrap;">
                 {{sc_list[0].address_line2 or ' '}}
         </div>
-        <div style="position: absolute;top:{{ 4.9 + offset_0 }}cm;left: 4.0cm;white-space:nowrap;">
+        <div style="position: absolute;top:{{ 4.7 + offset_0 }}cm;left: 4.0cm;white-space:nowrap;">
                 {{sc_list[0].city or ' '}} {{ sc_list[0].pin_code or ' ' }}
         </div>
         {% else %}
-        <div style="position: absolute;top:{{ 4.5 + offset_0 }}cm;left: 4.0cm;white-space:nowrap;">
+        <div style="position: absolute;top:{{ 4.3 + offset_0 }}cm;left: 4.0cm;white-space:nowrap;">
                 {{sc_list[0].city or ' '}} {{ sc_list[0].pin_code or ' '}}
         </div>
         {% endif %}
-        <div style="position: absolute;top:{{ 5.3 + offset_0 }}cm;left: 4.3cm;white-space:nowrap;">
+        <div style="position: absolute;top:{{ 5.1 + offset_0 }}cm;left: 4.3cm;white-space:nowrap;">
                 {% if sc_list[0].phone and sc_list[0].mobile %}
                     {{ sc_list[0].phone + ' / ' + sc_list[0].mobile }}
                 {% elif sc_list[0].phone %}
@@ -92,20 +92,20 @@
                     {{ sc_list[0].mobile or ' '}}
                 {% endif %}
         </div>
-        <div style="position: absolute;top:{{ 5.7 + offset_0 }}cm;left: 5.5cm;white-space:nowrap;">
+        <div style="position: absolute;top:{{ 5.4 + offset_0 }}cm;left: 5.5cm;white-space:nowrap;">
                 {{sc_list[0].blood_group or ' '}}
         </div>
     </div>
 
     {% if sc_list[1] %}
     <div>
-        <div style="position: absolute;top:{{ 0.45 + offset_1 }}cm;left: 14.3cm;white-space:nowrap;">
+        <div style="position: absolute;top:{{ 0.45 + offset_1 }}cm;left: 14cm;white-space:nowrap;">
                 {{sc_list[1].allergic_to or missingvalue}}
         </div>
-        <div style="position: absolute;top:{{ 0.9 + offset_1 }}cm;left: 14.5cm;white-space:nowrap;">
+        <div style="position: absolute;top:{{ 0.9 + offset_1 }}cm;left: 14.1cm;white-space:nowrap;">
                 {{sc_list[1].disease or missingvalue}}
         </div>
-        <div style="position: absolute;top:{{ 1.3 + offset_1 }}cm;left: 15cm;white-space:nowrap;">
+        <div style="position: absolute;top:{{ 1.3 + offset_1 }}cm;left: 14.5cm;white-space:nowrap;">
                 {{sc_list[1].medication or missingvalue}}
         </div>
         <div style="position: absolute;top:{{ 2.1 + offset_1 }}cm;left: 11.0cm;white-space:nowrap;">
@@ -119,7 +119,7 @@
                 {{sc_list[1].emergency_address2 or ' '}}
         </div>
         {% endif %}
-        <div style="position: absolute;top:{{ 3.5 + offset_1 }}cm;left: 12.8cm;white-space:nowrap;">
+        <div style="position: absolute;top:{{ 3.3 + offset_1 }}cm;left: 12.8cm;white-space:nowrap;">
                 {% if sc_list[1].emergency_phone and sc_list[1].emergency_mobile %}
                     {{ sc_list[1].emergency_phone + ' / ' + sc_list[1].emergency_mobile }}
                 {% elif sc_list[1].emergency_phone %}
@@ -134,7 +134,7 @@
         <div style="position: absolute;top:{{ 3.1 + offset_1 }}cm;left: 4.0cm;white-space:nowrap;">
                 {{sc_list[1].first_name}} {{sc_list[1].surname or ' '}}
         </div>
-        <div style="position: absolute;top:{{ 3.6 + offset_1 }}cm;left: {{ 5.8  }}cm;white-space:nowrap;">
+        <div style="position: absolute;top:{{ 3.5 + offset_1 }}cm;left: {{ 5.8  }}cm;white-space:nowrap;">
             {%- if sc_list[1].date_of_birth -%}
                 {{frappe.utils.formatdate(sc_list[1].date_of_birth)}} - {{sc_list[1].age}} yrs
             {%- else -%}
@@ -143,22 +143,22 @@
                 {%- endif -%}
             {%- endif -%}
         </div>
-        <div style="position: absolute;top:{{ 4.1 + offset_1 }}cm;left: 4.0cm;white-space:nowrap;">
+        <div style="position: absolute;top:{{ 3.9 + offset_1 }}cm;left: 4.0cm;white-space:nowrap;">
                 {{sc_list[1].address_line1}}
         </div>
         {% if sc_list[1].address_line2 %}
-        <div style="position: absolute;top:{{ 4.5 + offset_1 }}cm;left: 4.0cm;white-space:nowrap;">
+        <div style="position: absolute;top:{{ 4.3 + offset_1 }}cm;left: 4.0cm;white-space:nowrap;">
                 {{sc_list[1].address_line2 or ' '}}
         </div>
-        <div style="position: absolute;top:{{ 4.9 + offset_1 }}cm;left: 4.0cm;white-space:nowrap;">
+        <div style="position: absolute;top:{{ 4.7 + offset_1 }}cm;left: 4.0cm;white-space:nowrap;">
                 {{sc_list[1].city or ' '}} {{ sc_list[1].pin_code or ' ' }}
         </div>
         {% else %}
-        <div style="position: absolute;top:{{ 4.5 + offset_1 }}cm;left: 4.0cm;white-space:nowrap;">
+        <div style="position: absolute;top:{{ 4.3 + offset_1 }}cm;left: 4.0cm;white-space:nowrap;">
                 {{sc_list[1].city or ' '}} {{ sc_list[1].pin_code or ' '}}
         </div>
         {% endif %}
-        <div style="position: absolute;top:{{ 5.3 + offset_1 }}cm;left: 4.3cm;white-space:nowrap;">
+        <div style="position: absolute;top:{{ 5.1 + offset_1 }}cm;left: 4.3cm;white-space:nowrap;">
                 {% if sc_list[1].phone and sc_list[1].mobile %}
                     {{ sc_list[1].phone + ' / ' + sc_list[1].mobile }}
                 {% elif sc_list[1].phone %}
@@ -167,7 +167,7 @@
                     {{ sc_list[1].mobile or ' '}}
                 {% endif %}
         </div>
-        <div style="position: absolute;top:{{ 5.7 + offset_1 }}cm;left: 5.5cm;white-space:nowrap;">
+        <div style="position: absolute;top:{{ 5.4 + offset_1 }}cm;left: 5.5cm;white-space:nowrap;">
                 {{sc_list[1].blood_group or ' '}}
         </div>
     </div>
@@ -175,13 +175,13 @@
 
     {% if sc_list[2] %}
     <div>
-        <div style="position: absolute;top:{{ 0.45 + offset_2 }}cm;left: 14.3cm;white-space:nowrap;">
+        <div style="position: absolute;top:{{ 0.45 + offset_2 }}cm;left: 14cm;white-space:nowrap;">
                 {{sc_list[2].allergic_to or missingvalue}}
         </div>
-        <div style="position: absolute;top:{{ 0.9 + offset_2 }}cm;left: 14.5cm;white-space:nowrap;">
+        <div style="position: absolute;top:{{ 0.9 + offset_2 }}cm;left: 14.1cm;white-space:nowrap;">
                 {{sc_list[2].disease or missingvalue}}
         </div>
-        <div style="position: absolute;top:{{ 1.3 + offset_2 }}cm;left: 15cm;white-space:nowrap;">
+        <div style="position: absolute;top:{{ 1.3 + offset_2 }}cm;left: 14.5cm;white-space:nowrap;">
                 {{sc_list[2].medication or missingvalue}}
         </div>
         <div style="position: absolute;top:{{ 2.1 + offset_2 }}cm;left: 11.0cm;white-space:nowrap;">
@@ -195,7 +195,7 @@
                 {{sc_list[2].emergency_address2 or ' '}}
         </div>
         {% endif %}
-        <div style="position: absolute;top:{{ 3.5 + offset_2 }}cm;left: 12.8cm;white-space:nowrap;">
+        <div style="position: absolute;top:{{ 3.3 + offset_2 }}cm;left: 12.8cm;white-space:nowrap;">
                 {% if sc_list[2].emergency_phone and sc_list[2].emergency_mobile %}
                     {{ sc_list[2].emergency_phone + ' / ' + sc_list[2].emergency_mobile }}
                 {% elif sc_list[2].emergency_phone %}
@@ -210,7 +210,7 @@
         <div style="position: absolute;top:{{ 3.1 + offset_2 }}cm;left: 4.0cm;white-space:nowrap;">
                 {{sc_list[2].first_name}} {{sc_list[2].surname or ' '}}
         </div>
-        <div style="position: absolute;top:{{ 3.6 + offset_2 }}cm;left: {{ 5.8  }}cm;white-space:nowrap;">
+        <div style="position: absolute;top:{{ 3.5 + offset_2 }}cm;left: {{ 5.8  }}cm;white-space:nowrap;">
             {%- if sc_list[2].date_of_birth -%}
                 {{frappe.utils.formatdate(sc_list[2].date_of_birth)}} - {{sc_list[2].age}} yrs
             {%- else -%}
@@ -219,22 +219,22 @@
                 {%- endif -%}
             {%- endif -%}
         </div>
-        <div style="position: absolute;top:{{ 4.1 + offset_2 }}cm;left: 4.0cm;white-space:nowrap;">
+        <div style="position: absolute;top:{{ 3.9 + offset_2 }}cm;left: 4.0cm;white-space:nowrap;">
                 {{sc_list[2].address_line1}}
         </div>
         {% if sc_list[2].address_line2 %}
-        <div style="position: absolute;top:{{ 4.5 + offset_2 }}cm;left: 4.0cm;white-space:nowrap;">
+        <div style="position: absolute;top:{{ 4.3 + offset_2 }}cm;left: 4.0cm;white-space:nowrap;">
                 {{sc_list[2].address_line2 or ' '}}
         </div>
-        <div style="position: absolute;top:{{ 4.9 + offset_2 }}cm;left: 4.0cm;white-space:nowrap;">
+        <div style="position: absolute;top:{{ 4.7 + offset_2 }}cm;left: 4.0cm;white-space:nowrap;">
                 {{sc_list[2].city or ' '}} {{ sc_list[2].pin_code or ' ' }}
         </div>
         {% else %}
-        <div style="position: absolute;top:{{ 4.5 + offset_2 }}cm;left: 4.0cm;white-space:nowrap;">
+        <div style="position: absolute;top:{{ 4.3 + offset_2 }}cm;left: 4.0cm;white-space:nowrap;">
                 {{sc_list[2].city or ' '}} {{ sc_list[2].pin_code or ' '}}
         </div>
         {% endif %}
-        <div style="position: absolute;top:{{ 5.3 + offset_2 }}cm;left: 4.3cm;white-space:nowrap;">
+        <div style="position: absolute;top:{{ 5.1 + offset_2 }}cm;left: 4.3cm;white-space:nowrap;">
                 {% if sc_list[2].phone and sc_list[2].mobile %}
                     {{ sc_list[2].phone + ' / ' + sc_list[2].mobile }}
                 {% elif sc_list[2].phone %}
@@ -243,7 +243,7 @@
                     {{ sc_list[2].mobile or ' '}}
                 {% endif %}
         </div>
-        <div style="position: absolute;top:{{ 5.7 + offset_2 }}cm;left: 5.5cm;white-space:nowrap;">
+        <div style="position: absolute;top:{{ 5.4 + offset_2 }}cm;left: 5.5cm;white-space:nowrap;">
                 {{sc_list[2].blood_group or ' '}}
         </div>
     </div>
@@ -251,13 +251,13 @@
 
     {% if sc_list[3] %}
     <div>
-        <div style="position: absolute;top:{{ 0.45 + offset_3 }}cm;left: 14.3cm;white-space:nowrap;">
+        <div style="position: absolute;top:{{ 0.45 + offset_3 }}cm;left: 14cm;white-space:nowrap;">
                 {{sc_list[3].allergic_to or missingvalue}}
         </div>
-        <div style="position: absolute;top:{{ 0.9 + offset_3 }}cm;left: 14.5cm;white-space:nowrap;">
+        <div style="position: absolute;top:{{ 0.9 + offset_3 }}cm;left: 14.1cm;white-space:nowrap;">
                 {{sc_list[3].disease or missingvalue}}
         </div>
-        <div style="position: absolute;top:{{ 1.3 + offset_3 }}cm;left: 15cm;white-space:nowrap;">
+        <div style="position: absolute;top:{{ 1.3 + offset_3 }}cm;left: 14.5cm;white-space:nowrap;">
                 {{sc_list[3].medication or missingvalue}}
         </div>
         <div style="position: absolute;top:{{ 2.1 + offset_3 }}cm;left: 11.0cm;white-space:nowrap;">
@@ -271,7 +271,7 @@
                 {{sc_list[3].emergency_address2 or ' '}}
         </div>
         {% endif %}
-        <div style="position: absolute;top:{{ 3.5 + offset_3 }}cm;left: 12.8cm;white-space:nowrap;">
+        <div style="position: absolute;top:{{ 3.3 + offset_3 }}cm;left: 12.8cm;white-space:nowrap;">
                 {% if sc_list[3].emergency_phone and sc_list[3].emergency_mobile %}
                     {{ sc_list[3].emergency_phone + ' / ' + sc_list[3].emergency_mobile }}
                 {% elif sc_list[3].emergency_phone %}
@@ -286,7 +286,7 @@
         <div style="position: absolute;top:{{ 3.1 + offset_3 }}cm;left: 4.0cm;white-space:nowrap;">
                 {{sc_list[3].first_name}} {{sc_list[3].surname or ' '}}
         </div>
-        <div style="position: absolute;top:{{ 3.6 + offset_3 }}cm;left: {{ 5.8  }}cm;white-space:nowrap;">
+        <div style="position: absolute;top:{{ 3.5 + offset_3 }}cm;left: {{ 5.8  }}cm;white-space:nowrap;">
             {%- if sc_list[3].date_of_birth -%}
                 {{frappe.utils.formatdate(sc_list[3].date_of_birth)}} - {{sc_list[3].age}} yrs
             {%- else -%}
@@ -295,22 +295,22 @@
                 {%- endif -%}
             {%- endif -%}
         </div>
-        <div style="position: absolute;top:{{ 4.1 + offset_3 }}cm;left: 4.0cm;white-space:nowrap;">
+        <div style="position: absolute;top:{{ 3.9 + offset_3 }}cm;left: 4.0cm;white-space:nowrap;">
                 {{sc_list[3].address_line1}}
         </div>
         {% if sc_list[3].address_line2 %}
-        <div style="position: absolute;top:{{ 4.5 + offset_3 }}cm;left: 4.0cm;white-space:nowrap;">
+        <div style="position: absolute;top:{{ 4.3 + offset_3 }}cm;left: 4.0cm;white-space:nowrap;">
                 {{sc_list[3].address_line2 or ' '}}
         </div>
-        <div style="position: absolute;top:{{ 4.9 + offset_3 }}cm;left: 4.0cm;white-space:nowrap;">
+        <div style="position: absolute;top:{{ 4.7 + offset_3 }}cm;left: 4.0cm;white-space:nowrap;">
                 {{sc_list[3].city or ' '}} {{ sc_list[3].pin_code or ' ' }}
         </div>
         {% else %}
-        <div style="position: absolute;top:{{ 4.5 + offset_3 }}cm;left: 4.0cm;white-space:nowrap;">
+        <div style="position: absolute;top:{{ 4.3 + offset_3 }}cm;left: 4.0cm;white-space:nowrap;">
                 {{sc_list[3].city or ' '}} {{ sc_list[3].pin_code or ' '}}
         </div>
         {% endif %}
-        <div style="position: absolute;top:{{ 5.3 + offset_3 }}cm;left: 4.3cm;white-space:nowrap;">
+        <div style="position: absolute;top:{{ 5.1 + offset_3 }}cm;left: 4.3cm;white-space:nowrap;">
                 {% if sc_list[3].phone and sc_list[3].mobile %}
                     {{ sc_list[3].phone + ' / ' + sc_list[3].mobile }}
                 {% elif sc_list[3].phone %}
@@ -319,7 +319,7 @@
                     {{ sc_list[3].mobile or ' '}}
                 {% endif %}
         </div>
-        <div style="position: absolute;top:{{ 5.7 + offset_3 }}cm;left: 5.5cm;white-space:nowrap;">
+        <div style="position: absolute;top:{{ 5.4 + offset_3 }}cm;left: 5.5cm;white-space:nowrap;">
                 {{sc_list[3].blood_group or ' '}}
         </div>
     </div>
@@ -328,27 +328,27 @@
     {# 'without disease' #}    
 
     <div>
-        <div style="position: absolute;top:{{ 0.4 - 0.1 + offset_disease_0 }}cm;left: 14.3cm;white-space:nowrap;">
+        <div style="position: absolute;top:{{ 0.45 + offset_disease_0 }}cm;left: 14cm;white-space:nowrap;">
                 {{sc_list[0].allergic_to or missingvalue }}
         </div>
-        <div style="position: absolute;top:{{ 0.9 - 0.2 + offset_disease_0 }}cm;left: 14.5cm;white-space:nowrap;">
+        <div style="position: absolute;top:{{ 0.9 + offset_disease_0 }}cm;left: 14.1cm;white-space:nowrap;">
                 {{sc_list[0].disease or missingvalue }}
         </div>
-        <div style="position: absolute;top:{{ 1.3 - 0.2 + offset_disease_0 }}cm;left: 15.3cm;white-space:nowrap;">
+        <div style="position: absolute;top:{{ 1.3 + offset_disease_0 }}cm;left: 14.5cm;white-space:nowrap;">
                 {{sc_list[0].medication or missingvalue }}
         </div>
-        <div style="position: absolute;top:{{ 2 - 0.1 + offset_disease_0 }}cm;left: 11.0cm;white-space:nowrap;">
+        <div style="position: absolute;top:{{ 2 + offset_disease_0 }}cm;left: 11.0cm;white-space:nowrap;">
                 {{sc_list[0].contact_name or ' ' }}
         </div>
-        <div style="position: absolute;top:{{ 2.4 - 0.1 + offset_disease_0 }}cm;left: 11.0cm;white-space:nowrap;">
+        <div style="position: absolute;top:{{ 2.5 + offset_disease_0 }}cm;left: 11.0cm;white-space:nowrap;">
                 {{sc_list[0].emergency_address1 or ' ' }}
         </div>
         {% if sc_list[0].emergency_address2 %}
-        <div style="position: absolute;top:{{ 2.8 - 0.1 + offset_disease_0 }}cm;left: 11.0cm;white-space:nowrap;">
+        <div style="position: absolute;top:{{ 2.9 + offset_disease_0 }}cm;left: 11.0cm;white-space:nowrap;">
             {{sc_list[0].emergency_address2 or ' '}}
         </div>
         {% endif %}
-        <div style="position: absolute;top:{{ 3.4 - 0.2 + offset_disease_0 }}cm;left: 12.8cm;white-space:nowrap;">
+        <div style="position: absolute;top:{{ 3.3 + offset_disease_0 }}cm;left: 12.8cm;white-space:nowrap;">
                 {% if sc_list[0].emergency_phone and sc_list[0].emergency_mobile %}
                     {{ sc_list[0].emergency_phone + ' / ' + sc_list[0].emergency_mobile }}
                 {% elif sc_list[0].emergency_phone %}
@@ -357,13 +357,13 @@
                     {{ sc_list[0].emergency_mobile or ' ' }}
                 {% endif %}
         </div>
-        <div style="position: absolute;top:{{ 2.6 - 0.2 + offset_disease_0 }}cm;left: 4.5cm;white-space:nowrap;">
+        <div style="position: absolute;top:{{ 2.7 + offset_disease_0 }}cm;left: 4.5cm;white-space:nowrap;">
                 {{sc_list[0].card_number }}
         </div>
-        <div style="position: absolute;top:{{ 3.0 - 0.2 + offset_disease_0 }}cm;left: 4.0cm;white-space:nowrap;">
+        <div style="position: absolute;top:{{ 3.1 + offset_disease_0 }}cm;left: 4.0cm;white-space:nowrap;">
                 {{sc_list[0].first_name }} {{sc_list[0].surname or ' '}}
         </div>
-        <div style="position: absolute;top:{{ 3.5 - 0.2 + offset_disease_0 }}cm;left: 5.8cm;white-space:nowrap;">
+        <div style="position: absolute;top:{{ 3.5 + offset_disease_0 }}cm;left: 5.8cm;white-space:nowrap;">
             {%- if sc_list[0].date_of_birth -%}
                 {{frappe.utils.formatdate(sc_list[0].date_of_birth)}} - {{sc_list[0].age}} yrs
             {%- else -%}
@@ -372,22 +372,22 @@
                 {%- endif -%}
             {%- endif -%}
         </div>
-        <div style="position: absolute;top:{{ 4.0 - 0.2 + offset_disease_0 }}cm;left: 4.0cm;white-space:nowrap;">
+        <div style="position: absolute;top:{{ 3.9 + offset_disease_0 }}cm;left: 4.0cm;white-space:nowrap;">
                 {{sc_list[0].address_line1}}
         </div>
         {% if sc_list[0].address_line2 %}
-        <div style="position: absolute;top:{{ 4.4 - 0.2 + offset_disease_0 }}cm;left: 4.0cm;white-space:nowrap;">
+        <div style="position: absolute;top:{{ 4.3 + offset_disease_0 }}cm;left: 4.0cm;white-space:nowrap;">
                 {{sc_list[0].address_line2 or ' '}}
         </div>
-        <div style="position: absolute;top:{{ 4.8 - 0.2 + offset_disease_0 }}cm;left: 4.0cm;white-space:nowrap;">
+        <div style="position: absolute;top:{{ 4.7 + offset_disease_0 }}cm;left: 4.0cm;white-space:nowrap;">
                 {{sc_list[0].city or ' '}} {{ sc_list[0].pin_code or ' '}}
         </div>
         {% else %}
-        <div style="position: absolute;top:{{ 4.4 - 0.2 + offset_disease_0 }}cm;left: 4.0cm;white-space:nowrap;">
+        <div style="position: absolute;top:{{ 4.3 + offset_disease_0 }}cm;left: 4.0cm;white-space:nowrap;">
                 {{sc_list[0].city or ' '}} {{ sc_list[0].pin_code or ' '}}
         </div>
         {% endif %}
-        <div style="position: absolute;top:{{ 5.2 - 0.2 + offset_disease_0 }}cm;left: 4.3cm;white-space:nowrap;">
+        <div style="position: absolute;top:{{ 5.1 + offset_disease_0 }}cm;left: 4.3cm;white-space:nowrap;">
                 {% if sc_list[0].phone and sc_list[0].mobile %}
                     {{ sc_list[0].phone + ' / ' + sc_list[0].mobile }}
                 {% elif sc_list[0].phone %}
@@ -396,34 +396,34 @@
                     {{ sc_list[0].mobile or ' ' }}
                 {% endif %}
         </div>
-        <div style="position: absolute;top:{{ 5.6 - 0.2 + offset_disease_0 }}cm;left: 5.5cm;white-space:nowrap;">
+        <div style="position: absolute;top:{{ 5.4 + offset_disease_0 }}cm;left: 5.5cm;white-space:nowrap;">
                 {{sc_list[0].blood_group or ' ' }}
         </div>
     </div>
 
     {% if sc_list[1] %}
     <div>
-        <div style="position: absolute;top:{{ 0.4 - 0.1 + offset_disease_1 }}cm;left: 14.3cm;white-space:nowrap;">
+        <div style="position: absolute;top:{{ 0.45 + offset_disease_1 }}cm;left: 14cm;white-space:nowrap;">
                 {{sc_list[1].allergic_to or missingvalue }}
         </div>
-        <div style="position: absolute;top:{{ 0.9 - 0.2 + offset_disease_1 }}cm;left: 14.5cm;white-space:nowrap;">
+        <div style="position: absolute;top:{{ 0.9 + offset_disease_1 }}cm;left: 14.1cm;white-space:nowrap;">
                 {{sc_list[1].disease or missingvalue }}
         </div>
-        <div style="position: absolute;top:{{ 1.3 - 0.2 + offset_disease_1 }}cm;left: 15.3cm;white-space:nowrap;">
+        <div style="position: absolute;top:{{ 1.3 + offset_disease_1 }}cm;left: 14.5cm;white-space:nowrap;">
                 {{sc_list[1].medication or missingvalue }}
         </div>
-        <div style="position: absolute;top:{{ 2 - 0.1 + offset_disease_1 }}cm;left: 11.0cm;white-space:nowrap;">
+        <div style="position: absolute;top:{{ 2.1 + offset_disease_1 }}cm;left: 11.0cm;white-space:nowrap;">
                 {{sc_list[1].contact_name or ' ' }}
         </div>
-        <div style="position: absolute;top:{{ 2.4 - 0.1 + offset_disease_1 }}cm;left: 11.0cm;white-space:nowrap;">
+        <div style="position: absolute;top:{{ 2.5 + offset_disease_1 }}cm;left: 11.0cm;white-space:nowrap;">
                 {{sc_list[1].emergency_address1 or ' ' }}
         </div>
         {% if sc_list[1].emergency_address2 %}
-        <div style="position: absolute;top:{{ 2.8 - 0.1 + offset_disease_1 }}cm;left: 11.0cm;white-space:nowrap;">
+        <div style="position: absolute;top:{{ 2.9 + offset_disease_1 }}cm;left: 11.0cm;white-space:nowrap;">
             {{sc_list[1].emergency_address2 or ' '}}
         </div>
         {% endif %}
-        <div style="position: absolute;top:{{ 3.4 - 0.2 + offset_disease_1 }}cm;left: 12.8cm;white-space:nowrap;">
+        <div style="position: absolute;top:{{ 3.3 + offset_disease_1 }}cm;left: 12.8cm;white-space:nowrap;">
                 {% if sc_list[1].emergency_phone and sc_list[1].emergency_mobile %}
                     {{ sc_list[1].emergency_phone + ' / ' + sc_list[1].emergency_mobile }}
                 {% elif sc_list[1].emergency_phone %}
@@ -432,13 +432,13 @@
                     {{ sc_list[1].emergency_mobile or ' ' }}
                 {% endif %}
         </div>
-        <div style="position: absolute;top:{{ 2.6 - 0.2 + offset_disease_1 }}cm;left: 4.5cm;white-space:nowrap;">
+        <div style="position: absolute;top:{{ 2.7 + offset_disease_1 }}cm;left: 4.5cm;white-space:nowrap;">
                 {{sc_list[1].card_number }}
         </div>
-        <div style="position: absolute;top:{{ 3.0 - 0.2 + offset_disease_1 }}cm;left: 4.0cm;white-space:nowrap;">
+        <div style="position: absolute;top:{{ 3.1 + offset_disease_1 }}cm;left: 4.0cm;white-space:nowrap;">
                 {{sc_list[1].first_name }} {{sc_list[1].surname or ' '}}
         </div>
-        <div style="position: absolute;top:{{ 3.5 - 0.2 + offset_disease_1 }}cm;left: 5.8cm;white-space:nowrap;">
+        <div style="position: absolute;top:{{ 3.5 + offset_disease_1 }}cm;left: 5.8cm;white-space:nowrap;">
             {%- if sc_list[1].date_of_birth -%}
                 {{frappe.utils.formatdate(sc_list[1].date_of_birth)}} - {{sc_list[1].age}} yrs
             {%- else -%}
@@ -447,22 +447,22 @@
                 {%- endif -%}
             {%- endif -%}
         </div>
-        <div style="position: absolute;top:{{ 4.0 - 0.2 + offset_disease_1 }}cm;left: 4.0cm;white-space:nowrap;">
+        <div style="position: absolute;top:{{ 3.9 + offset_disease_1 }}cm;left: 4.0cm;white-space:nowrap;">
                 {{sc_list[1].address_line1}}
         </div>
         {% if sc_list[1].address_line2 %}
-        <div style="position: absolute;top:{{ 4.4 - 0.2 + offset_disease_1 }}cm;left: 4.0cm;white-space:nowrap;">
+        <div style="position: absolute;top:{{ 4.3 + offset_disease_1 }}cm;left: 4.0cm;white-space:nowrap;">
                 {{sc_list[1].address_line2 or ' '}}
         </div>
-        <div style="position: absolute;top:{{ 4.8 - 0.2 + offset_disease_1 }}cm;left: 4.0cm;white-space:nowrap;">
+        <div style="position: absolute;top:{{ 4.7 + offset_disease_1 }}cm;left: 4.0cm;white-space:nowrap;">
                 {{sc_list[1].city or ' '}} {{ sc_list[1].pin_code or ' '}}
         </div>
         {% else %}
-        <div style="position: absolute;top:{{ 4.4 - 0.2 + offset_disease_1 }}cm;left: 4.0cm;white-space:nowrap;">
+        <div style="position: absolute;top:{{ 4.3 + offset_disease_1 }}cm;left: 4.0cm;white-space:nowrap;">
                 {{sc_list[1].city or ' '}} {{ sc_list[1].pin_code or ' '}}
         </div>
         {% endif %}
-        <div style="position: absolute;top:{{ 5.2 - 0.2 + offset_disease_1 }}cm;left: 4.3cm;white-space:nowrap;">
+        <div style="position: absolute;top:{{ 5.1 + offset_disease_1 }}cm;left: 4.3cm;white-space:nowrap;">
                 {% if sc_list[1].phone and sc_list[1].mobile %}
                     {{ sc_list[1].phone + ' / ' + sc_list[1].mobile }}
                 {% elif sc_list[1].phone %}
@@ -471,7 +471,7 @@
                     {{ sc_list[1].mobile or ' ' }}
                 {% endif %}
         </div>
-        <div style="position: absolute;top:{{ 5.6 - 0.2 + offset_disease_1 }}cm;left: 5.5cm;white-space:nowrap;">
+        <div style="position: absolute;top:{{ 5.4 + offset_disease_1 }}cm;left: 5.5cm;white-space:nowrap;">
                 {{sc_list[1].blood_group or ' ' }}
         </div>
     </div>
@@ -479,27 +479,27 @@
 
     {% if sc_list[2] %}
     <div>
-        <div style="position: absolute;top:{{ 0.4 - 0.1 + offset_disease_2 }}cm;left: 14.3cm;white-space:nowrap;">
+        <div style="position: absolute;top:{{ 0.45 + offset_disease_2 }}cm;left: 14cm;white-space:nowrap;">
                 {{sc_list[2].allergic_to or missingvalue }}
         </div>
-        <div style="position: absolute;top:{{ 0.9 - 0.2 + offset_disease_2 }}cm;left: 14.5cm;white-space:nowrap;">
+        <div style="position: absolute;top:{{ 0.9 + offset_disease_2 }}cm;left: 14.1cm;white-space:nowrap;">
                 {{sc_list[2].disease or missingvalue }}
         </div>
-        <div style="position: absolute;top:{{ 1.3 - 0.2 + offset_disease_2 }}cm;left: 15.3cm;white-space:nowrap;">
+        <div style="position: absolute;top:{{ 1.3 + offset_disease_2 }}cm;left: 14.5cm;white-space:nowrap;">
                 {{sc_list[2].medication or missingvalue }}
         </div>
-        <div style="position: absolute;top:{{ 2 - 0.1 + offset_disease_2 }}cm;left: 11.0cm;white-space:nowrap;">
+        <div style="position: absolute;top:{{ 2.1 + offset_disease_2 }}cm;left: 11.0cm;white-space:nowrap;">
                 {{sc_list[2].contact_name or ' ' }}
         </div>
-        <div style="position: absolute;top:{{ 2.4 - 0.1 + offset_disease_2 }}cm;left: 11.0cm;white-space:nowrap;">
+        <div style="position: absolute;top:{{ 2.5 + offset_disease_2 }}cm;left: 11.0cm;white-space:nowrap;">
                 {{sc_list[2].emergency_address1 or ' ' }}
         </div>
         {% if sc_list[2].emergency_address2 %}
-        <div style="position: absolute;top:{{ 2.8 - 0.1 + offset_disease_2 }}cm;left: 11.0cm;white-space:nowrap;">
+        <div style="position: absolute;top:{{ 2.9 + offset_disease_2 }}cm;left: 11.0cm;white-space:nowrap;">
             {{sc_list[2].emergency_address2 or ' '}}
         </div>
         {% endif %}
-        <div style="position: absolute;top:{{ 3.4 - 0.2 + offset_disease_2 }}cm;left: 12.8cm;white-space:nowrap;">
+        <div style="position: absolute;top:{{ 3.3 + offset_disease_2 }}cm;left: 12.8cm;white-space:nowrap;">
                 {% if sc_list[2].emergency_phone and sc_list[2].emergency_mobile %}
                     {{ sc_list[2].emergency_phone + ' / ' + sc_list[2].emergency_mobile }}
                 {% elif sc_list[2].emergency_phone %}
@@ -508,13 +508,13 @@
                     {{ sc_list[2].emergency_mobile or ' ' }}
                 {% endif %}
         </div>
-        <div style="position: absolute;top:{{ 2.6 - 0.2 + offset_disease_2 }}cm;left: 4.5cm;white-space:nowrap;">
+        <div style="position: absolute;top:{{ 2.7 + offset_disease_2 }}cm;left: 4.5cm;white-space:nowrap;">
                 {{sc_list[2].card_number }}
         </div>
-        <div style="position: absolute;top:{{ 3.0 - 0.2 + offset_disease_2 }}cm;left: 4.0cm;white-space:nowrap;">
+        <div style="position: absolute;top:{{ 3.1 + offset_disease_2 }}cm;left: 4.0cm;white-space:nowrap;">
                 {{sc_list[2].first_name }} {{sc_list[2].surname or ' '}}
         </div>
-        <div style="position: absolute;top:{{ 3.5 - 0.2 + offset_disease_2 }}cm;left: 5.8cm;white-space:nowrap;">
+        <div style="position: absolute;top:{{ 3.5 + offset_disease_2 }}cm;left: 5.8cm;white-space:nowrap;">
             {%- if sc_list[2].date_of_birth -%}
                 {{frappe.utils.formatdate(sc_list[2].date_of_birth)}} - {{sc_list[2].age}} yrs
             {%- else -%}
@@ -523,22 +523,22 @@
                 {%- endif -%}
             {%- endif -%}
         </div>
-        <div style="position: absolute;top:{{ 4.0 - 0.2 + offset_disease_2 }}cm;left: 4.0cm;white-space:nowrap;">
+        <div style="position: absolute;top:{{ 3.9 + offset_disease_2 }}cm;left: 4.0cm;white-space:nowrap;">
                 {{sc_list[2].address_line1}}
         </div>
         {% if sc_list[2].address_line2 %}
-        <div style="position: absolute;top:{{ 4.4 - 0.2 + offset_disease_2 }}cm;left: 4.0cm;white-space:nowrap;">
+        <div style="position: absolute;top:{{ 4.3 + offset_disease_2 }}cm;left: 4.0cm;white-space:nowrap;">
                 {{sc_list[2].address_line2 or ' '}}
         </div>
-        <div style="position: absolute;top:{{ 4.8 - 0.2 + offset_disease_2 }}cm;left: 4.0cm;white-space:nowrap;">
+        <div style="position: absolute;top:{{ 4.7 + offset_disease_2 }}cm;left: 4.0cm;white-space:nowrap;">
                 {{sc_list[2].city or ' '}} {{ sc_list[2].pin_code or ' '}}
         </div>
         {% else %}
-        <div style="position: absolute;top:{{ 4.4 - 0.2 + offset_disease_2 }}cm;left: 4.0cm;white-space:nowrap;">
+        <div style="position: absolute;top:{{ 4.3 + offset_disease_2 }}cm;left: 4.0cm;white-space:nowrap;">
                 {{sc_list[2].city or ' '}} {{ sc_list[2].pin_code or ' '}}
         </div>
         {% endif %}
-        <div style="position: absolute;top:{{ 5.2 - 0.2 + offset_disease_2 }}cm;left: 4.3cm;white-space:nowrap;">
+        <div style="position: absolute;top:{{ 5.1 + offset_disease_2 }}cm;left: 4.3cm;white-space:nowrap;">
                 {% if sc_list[2].phone and sc_list[2].mobile %}
                     {{ sc_list[2].phone + ' / ' + sc_list[2].mobile }}
                 {% elif sc_list[2].phone %}
@@ -547,7 +547,7 @@
                     {{ sc_list[2].mobile or ' ' }}
                 {% endif %}
         </div>
-        <div style="position: absolute;top:{{ 5.6 - 0.2 + offset_disease_2 }}cm;left: 5.5cm;white-space:nowrap;">
+        <div style="position: absolute;top:{{ 5.4 + offset_disease_2 }}cm;left: 5.5cm;white-space:nowrap;">
                 {{sc_list[2].blood_group or ' ' }}
         </div>
     </div>
@@ -555,27 +555,27 @@
 
     {% if sc_list[3] %}
     <div>
-        <div style="position: absolute;top:{{ 0.4 - 0.1 + offset_disease_3 }}cm;left: 14.3cm;white-space:nowrap;">
+        <div style="position: absolute;top:{{ 0.45 + offset_disease_3 }}cm;left: 14cm;white-space:nowrap;">
                 {{sc_list[3].allergic_to or missingvalue }}
         </div>
-        <div style="position: absolute;top:{{ 0.9 - 0.2 + offset_disease_3 }}cm;left: 14.5cm;white-space:nowrap;">
+        <div style="position: absolute;top:{{ 0.9 + offset_disease_3 }}cm;left: 14.1cm;white-space:nowrap;">
                 {{sc_list[3].disease or missingvalue }}
         </div>
-        <div style="position: absolute;top:{{ 1.3 - 0.2 + offset_disease_3 }}cm;left: 15.3cm;white-space:nowrap;">
+        <div style="position: absolute;top:{{ 1.3 + offset_disease_3 }}cm;left: 14.5cm;white-space:nowrap;">
                 {{sc_list[3].medication or missingvalue }}
         </div>
-        <div style="position: absolute;top:{{ 2 - 0.1 + offset_disease_3 }}cm;left: 11.0cm;white-space:nowrap;">
+        <div style="position: absolute;top:{{ 2.1 + offset_disease_3 }}cm;left: 11.0cm;white-space:nowrap;">
                 {{sc_list[3].contact_name or ' ' }}
         </div>
-        <div style="position: absolute;top:{{ 2.4 - 0.1 + offset_disease_3 }}cm;left: 11.0cm;white-space:nowrap;">
+        <div style="position: absolute;top:{{ 2.5 + offset_disease_3 }}cm;left: 11.0cm;white-space:nowrap;">
                 {{sc_list[3].emergency_address1 or ' ' }}
         </div>
         {% if sc_list[3].emergency_address2 %}
-        <div style="position: absolute;top:{{ 2.8 - 0.1 + offset_disease_3 }}cm;left: 11.0cm;white-space:nowrap;">
+        <div style="position: absolute;top:{{ 2.9 + offset_disease_3 }}cm;left: 11.0cm;white-space:nowrap;">
             {{sc_list[3].emergency_address2 or ' '}}
         </div>
         {% endif %}
-        <div style="position: absolute;top:{{ 3.4 - 0.2 + offset_disease_3 }}cm;left: 12.8cm;white-space:nowrap;">
+        <div style="position: absolute;top:{{ 3.3 + offset_disease_3 }}cm;left: 12.8cm;white-space:nowrap;">
                 {% if sc_list[3].emergency_phone and sc_list[3].emergency_mobile %}
                     {{ sc_list[3].emergency_phone + ' / ' + sc_list[3].emergency_mobile }}
                 {% elif sc_list[3].emergency_phone %}
@@ -584,13 +584,13 @@
                     {{ sc_list[3].emergency_mobile or ' ' }}
                 {% endif %}
         </div>
-        <div style="position: absolute;top:{{ 2.6 - 0.2 + offset_disease_3 }}cm;left: 4.5cm;white-space:nowrap;">
+        <div style="position: absolute;top:{{ 2.7 + offset_disease_3 }}cm;left: 4.5cm;white-space:nowrap;">
                 {{sc_list[3].card_number }}
         </div>
-        <div style="position: absolute;top:{{ 3.0 - 0.2 + offset_disease_3 }}cm;left: 4.0cm;white-space:nowrap;">
+        <div style="position: absolute;top:{{ 3.1 + offset_disease_3 }}cm;left: 4.0cm;white-space:nowrap;">
                 {{sc_list[3].first_name }} {{sc_list[3].surname or ' '}}
         </div>
-        <div style="position: absolute;top:{{ 3.5 - 0.2 + offset_disease_3 }}cm;left: 5.8cm;white-space:nowrap;">
+        <div style="position: absolute;top:{{ 3.5 + offset_disease_3 }}cm;left: 5.8cm;white-space:nowrap;">
             {%- if sc_list[3].date_of_birth -%}
                 {{frappe.utils.formatdate(sc_list[3].date_of_birth)}} - {{sc_list[3].age}} yrs
             {%- else -%}
@@ -599,22 +599,22 @@
                 {%- endif -%}
             {%- endif -%}
         </div>
-        <div style="position: absolute;top:{{ 4.0 - 0.2 + offset_disease_3 }}cm;left: 4.0cm;white-space:nowrap;">
+        <div style="position: absolute;top:{{ 3.9 + offset_disease_3 }}cm;left: 4.0cm;white-space:nowrap;">
                 {{sc_list[3].address_line1}}
         </div>
         {% if sc_list[3].address_line2 %}
-        <div style="position: absolute;top:{{ 4.4 - 0.2 + offset_disease_3 }}cm;left: 4.0cm;white-space:nowrap;">
+        <div style="position: absolute;top:{{ 4.3 + offset_disease_3 }}cm;left: 4.0cm;white-space:nowrap;">
                 {{sc_list[3].address_line2 or ' '}}
         </div>
-        <div style="position: absolute;top:{{ 4.8 - 0.2 + offset_disease_3 }}cm;left: 4.0cm;white-space:nowrap;">
+        <div style="position: absolute;top:{{ 4.7 + offset_disease_3 }}cm;left: 4.0cm;white-space:nowrap;">
                 {{sc_list[3].city or ' '}} {{ sc_list[3].pin_code or ' '}}
         </div>
         {% else %}
-        <div style="position: absolute;top:{{ 4.4 - 0.2 + offset_disease_3 }}cm;left: 4.0cm;white-space:nowrap;">
+        <div style="position: absolute;top:{{ 4.3 + offset_disease_3 }}cm;left: 4.0cm;white-space:nowrap;">
                 {{sc_list[3].city or ' '}} {{ sc_list[3].pin_code or ' '}}
         </div>
         {% endif %}
-        <div style="position: absolute;top:{{ 5.2 - 0.2 + offset_disease_3 }}cm;left: 4.3cm;white-space:nowrap;">
+        <div style="position: absolute;top:{{ 5.1 + offset_disease_3 }}cm;left: 4.3cm;white-space:nowrap;">
                 {% if sc_list[3].phone and sc_list[3].mobile %}
                     {{ sc_list[3].phone + ' / ' + sc_list[3].mobile }}
                 {% elif sc_list[3].phone %}
@@ -623,11 +623,10 @@
                     {{ sc_list[3].mobile or ' ' }}
                 {% endif %}
         </div>
-        <div style="position: absolute;top:{{ 5.6 - 0.2 + offset_disease_3 }}cm;left: 5.5cm;white-space:nowrap;">
+        <div style="position: absolute;top:{{ 5.4 + offset_disease_3 }}cm;left: 5.5cm;white-space:nowrap;">
                 {{sc_list[3].blood_group or ' ' }}
         </div>
     </div>
     {% endif %}
 
 {% endif %}
-
