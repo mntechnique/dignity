@@ -15,14 +15,14 @@
     {% set increment = 6.2 %}
 
     {% for sc in sc_list %}
-        <div>
+<div>
             <div style="position: absolute;top:{{ 0.45 + offset }}cm;left: 14cm;white-space:nowrap;">
-                    {{ sc.allergic_to or missingvalue}}
+                    {{sc.allergic_to or missingvalue}}
             </div>
-            <div style="position: absolute;top:{{ 0.9 + offset }}cm;left: 14.1cm;white-space:nowrap;">
+            <div style="position: absolute;top:{{ 0.8 + offset }}cm;left: 14.1cm;white-space:nowrap;">
                     {{sc.disease or missingvalue}}
             </div>
-            <div style="position: absolute;top:{{ 1.3 + offset }}cm;left: 14.5cm;white-space:nowrap;">
+            <div style="position: absolute;top:{{ 1.2 + offset }}cm;left: 14.5cm;white-space:nowrap;">
                     {{sc.medication or missingvalue}}
             </div>
             <div style="position: absolute;top:{{ 2.1 + offset }}cm;left: 11.0cm;white-space:nowrap;">
@@ -39,35 +39,35 @@
             <div style="position: absolute;top:{{ 3.3 + offset }}cm;left: 12.8cm;white-space:nowrap;">
                     {{ sc.emergency_phone_mobile or ' ' }}
             </div>
-            <div style="position: absolute;top:{{ 2.7 + offset }}cm;left: {{ 4.5  }}cm;white-space:nowrap;">
+            <div style="position: absolute;top:{{ 2.5 + offset }}cm;left: {{ 4.5  }}cm;white-space:nowrap;">
                     {{sc.card_number_marathi}}
             </div>
-            <div style="position: absolute;top:{{ 3.1 + offset }}cm;left: 4.0cm;white-space:nowrap;">
+            <div style="position: absolute;top:{{ 3.0 + offset }}cm;left: 4.0cm;white-space:nowrap;">
                     {{sc.first_name}} {{sc.surname or ' '}}
             </div>
-            <div style="position: absolute;top:{{ 3.5 + offset }}cm;left: {{ 5.8  }}cm;white-space:nowrap;">
-                    {{ sc.birth_marathi or ' ' }}  - {{ sc.age_marathi or ' ' }}
+            <div style="position: absolute;top:{{ 3.4 + offset }}cm;left: {{ 5.8  }}cm;white-space:nowrap;">
+                    {{ sc.birth_marathi or ' ' }} - {{ sc.age_marathi or ' ' }}
             </div>
-            <div style="position: absolute;top:{{ 3.9 + offset }}cm;left: 4.0cm;white-space:nowrap;">
+            <div style="position: absolute;top:{{ 3.8 + offset }}cm;left: 4.0cm;white-space:nowrap;">
                     {{sc.address_line1}}
             </div>
             {% if sc.address_line2 %}
-            <div style="position: absolute;top:{{ 4.3 + offset }}cm;left: 4.0cm;white-space:nowrap;">
+            <div style="position: absolute;top:{{ 4.2 + offset }}cm;left: 4.0cm;white-space:nowrap;">
                     {{sc.address_line2 or ' '}}
             </div>
-            <div style="position: absolute;top:{{ 4.7 + offset }}cm;left: 4.0cm;white-space:nowrap;">
+            <div style="position: absolute;top:{{ 4.5 + offset }}cm;left: 4.0cm;white-space:nowrap;">
                     {{ sc.city_pin_code or ' '}}
             </div>
             {% else %}
-            <div style="position: absolute;top:{{ 4.3 + offset }}cm;left: 4.0cm;white-space:nowrap;">
+            <div style="position: absolute;top:{{ 4.2 + offset }}cm;left: 4.0cm;white-space:nowrap;">
                     {{ sc.city_pin_code or ' '}}
             </div>
             {% endif %}
             <div style="position: absolute;top:{{ 5.1 + offset }}cm;left: 4.3cm;white-space:nowrap;">
                     {{ sc.phone or ' ' }}
             </div>
-            <div style="position: absolute;top:{{ 5.4 + offset }}cm;left: 5.5cm;white-space:nowrap; font-size: 8pt;">
-                    {{sc.blood_group or ' ' }}
+            <div style="position: absolute;top:{{ 5.5 + offset }}cm;left: 5.5cm;white-space:nowrap; font-size: 8pt;">
+                    {{sc.blood_group or ' '}}
             </div>
         </div>
         {% set offset = offset + increment %}
@@ -103,34 +103,34 @@
             <div style="position: absolute;top:{{ 3.3 + offset }}cm;left: 12.8cm;white-space:nowrap;">
                     {{ sc.emergency_phone_mobile or ' ' }}
             </div>
-            <div style="position: absolute;top:{{ 2.7 + offset }}cm;left: {{ 4.5  }}cm;white-space:nowrap;">
+            <div style="position: absolute;top:{{ 2.5 + offset }}cm;left: {{ 4.5  }}cm;white-space:nowrap;">
                     {{sc.card_number_marathi}}
             </div>
-            <div style="position: absolute;top:{{ 3.1 + offset }}cm;left: 4.0cm;white-space:nowrap;">
+            <div style="position: absolute;top:{{ 3.0 + offset }}cm;left: 4.0cm;white-space:nowrap;">
                     {{sc.first_name}} {{sc.surname or ' '}}
             </div>
-            <div style="position: absolute;top:{{ 3.5 + offset }}cm;left: {{ 5.8  }}cm;white-space:nowrap;">
+            <div style="position: absolute;top:{{ 3.4 + offset }}cm;left: {{ 5.8  }}cm;white-space:nowrap;">
                     {{ sc.birth_marathi or ' ' }} - {{ sc.age_marathi or ' ' }}
             </div>
-            <div style="position: absolute;top:{{ 3.9 + offset }}cm;left: 4.0cm;white-space:nowrap;">
+            <div style="position: absolute;top:{{ 3.8 + offset }}cm;left: 4.0cm;white-space:nowrap;">
                     {{sc.address_line1}}
             </div>
             {% if sc.address_line2 %}
-            <div style="position: absolute;top:{{ 4.3 + offset }}cm;left: 4.0cm;white-space:nowrap;">
+            <div style="position: absolute;top:{{ 4.2 + offset }}cm;left: 4.0cm;white-space:nowrap;">
                     {{sc.address_line2 or ' '}}
             </div>
-            <div style="position: absolute;top:{{ 4.7 + offset }}cm;left: 4.0cm;white-space:nowrap;">
+            <div style="position: absolute;top:{{ 4.5 + offset }}cm;left: 4.0cm;white-space:nowrap;">
                     {{ sc.city_pin_code or ' '}}
             </div>
             {% else %}
-            <div style="position: absolute;top:{{ 4.3 + offset }}cm;left: 4.0cm;white-space:nowrap;">
+            <div style="position: absolute;top:{{ 4.2 + offset }}cm;left: 4.0cm;white-space:nowrap;">
                     {{ sc.city_pin_code or ' '}}
             </div>
             {% endif %}
             <div style="position: absolute;top:{{ 5.1 + offset }}cm;left: 4.3cm;white-space:nowrap;">
                     {{ sc.phone or ' ' }}
             </div>
-            <div style="position: absolute;top:{{ 5.4 + offset }}cm;left: 5.5cm;white-space:nowrap; font-size: 8pt;">
+            <div style="position: absolute;top:{{ 5.5 + offset }}cm;left: 5.5cm;white-space:nowrap; font-size: 8pt;">
                     {{sc.blood_group or ' '}}
             </div>
         </div>
