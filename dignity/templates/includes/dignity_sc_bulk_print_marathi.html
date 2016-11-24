@@ -46,7 +46,7 @@
                     {{sc.first_name}} {{sc.surname or ' '}}
             </div>
             <div style="position: absolute;top:{{ 3.5 + offset }}cm;left: {{ 5.8  }}cm;white-space:nowrap;">
-                    {{ sc.birth_marathi or ' ' }}
+                    {{ sc.birth_marathi or ' ' }}  - {{ sc.age_marathi or ' ' }}
             </div>
             <div style="position: absolute;top:{{ 3.9 + offset }}cm;left: 4.0cm;white-space:nowrap;">
                     {{sc.address_line1}}
@@ -110,7 +110,7 @@
                     {{sc.first_name}} {{sc.surname or ' '}}
             </div>
             <div style="position: absolute;top:{{ 3.5 + offset }}cm;left: {{ 5.8  }}cm;white-space:nowrap;">
-                    {{ sc.birth_marathi or ' ' }}
+                    {{ sc.birth_marathi or ' ' }} - {{ sc.age_marathi or ' ' }}
             </div>
             <div style="position: absolute;top:{{ 3.9 + offset }}cm;left: 4.0cm;white-space:nowrap;">
                     {{sc.address_line1}}
