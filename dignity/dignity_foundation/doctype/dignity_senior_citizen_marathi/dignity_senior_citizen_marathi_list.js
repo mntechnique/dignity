@@ -5,8 +5,8 @@ frappe.listview_settings['Dignity Senior Citizen Marathi'] = {
 			$.each(listview.get_checked_items(), function(key, value){
 				names.push(value._name);
 			});
-			var w = window.open("/api/method/dignity.api.bulk_print_memberships?"
-							+"names="+encodeURIComponent(names)+"&lang=MAR");
+			var w = window.open("/api/method/dignity.api.bulk_print_memberships_marathi?"
+							+"names="+encodeURIComponent(names));
 	
 			if(!w) {
 				frappe.msgprint(__("Please enable pop-ups")); return;
