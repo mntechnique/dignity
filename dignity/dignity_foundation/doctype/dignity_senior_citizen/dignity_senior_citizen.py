@@ -75,7 +75,7 @@ class DignitySeniorCitizen(Document):
         def gen_update_tahsildar_series(state,city,tahsildar_name,tahsildar_number):
             if tahsildar_number:
                 #check if tahsildar series number already exists to avoid data duplication
-                tahsildar_check = frappe.db.sql("""select name from `tabDignity Senior Citizen` where tahsildar_no = %s""",tahsildar_number)
+                tahsildar_check = frappe.db.sql("""select name from `tabDignity Senior Citizen` where tahsildar_no = %s and tahsildar_name = %s""", (tahsildar_number, tahsildar_name))
                 if tahsildar_check:
                     name = tahsildar_check[0][0]
                     if self.name == name:
